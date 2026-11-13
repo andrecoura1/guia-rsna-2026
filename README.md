@@ -26,4 +26,6 @@ No iPhone: abra o link no Safari › Compartilhar › **Adicionar à Tela de In�
 
 ## Aviso
 
-Projeto pessoal de colegas radiologistas, **sem vínculo com o RSNA**. O programa foi copiado do catálogo do RSNA em 12/11/2026 e pode mudar: confirme salas e horários no app oficial. Tempos de caminhada são estimativas.
+Projeto pessoal de colegas radiologistas, **sem vínculo com o RSNA**.
+
+O guia usa **apenas informações públicas do evento**: o catálogo de sessões, a lista de palestrantes e a lista de expositores divulgados pelo RSNA. **Nenhuma informação interna ou privilegiada foi usada.** O programa foi copiado em 12/11/2026 e pode mudar: confirme salas e horários no app oficial do RSNA. Tempos de caminhada são estimativas.
