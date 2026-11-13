@@ -11,7 +11,7 @@ A pocket schedule for **RSNA 2026** (McCormick Place, Chicago, Nov 29 – Dec 3,
 - **Walking time:** estimates the walk between North, South, West and Lakeside and warns you when there is not enough time.
 - **Now / Next:** what is happening now, your next room and when to leave.
 - **Quick capture:** photo (straight to camera), video, time-stamped notes; a day notebook and "I met someone" (name, contact, badge photo).
-- **People and contacts:** your business card (photo, title, link) as a QR code or contact file; a list of people you met; and search any speaker or moderator to see what they do **live** (lectures, moderation, oral talks), with one tap to log that you met them.
+- **People and contacts:** your business card (photo, title, link) as a QR code or contact file; a list of people you met; and search any speaker or moderator to see what they do **live** (lectures, moderation, oral talks), with one tap to log that you met them. Country flags for speakers are **estimated from the institution name** (about 2,400 of 14,000 people) and may be wrong.
 - **Booths:** ~790 exhibitors with booth numbers and halls; build your route and check off visits.
 - **Social:** receptions, live music, Exhibit Hall Social, After Dark.
 - **Map:** a schematic of McCormick Place and a walking-time table.
