@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#0b5563"><meta name="apple-mobile-web-app-title" content="RSNA Guide"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><title>RSNA 2026 Guide</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#0b5563"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="RSNA Guide"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><title>RSNA 2026 Guide</title>
 <meta name="description" content="Unofficial RSNA 2026 pocket guide: schedule by subspecialty, session conflicts, walking time between rooms, notes and photos.">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -208,6 +208,14 @@ a{color:var(--accent)}
 .qrbox svg{width:100%;height:100%;display:block}
 .foot2{margin-top:28px;padding-top:12px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);display:flex;flex-direction:column;gap:2px}
 .foot2 p{margin:0}
+#printArea{display:none}
+@media print{
+  body *{visibility:hidden!important}
+  #printArea,#printArea *{visibility:visible!important}
+  #printArea{display:block!important;position:absolute;left:0;top:0;width:100%;color:#000;background:#fff;font:11pt/1.4 -apple-system,Helvetica,Arial,sans-serif;padding:0 8mm}
+  #printArea h1{font-size:18pt;margin:0 0 4pt} #printArea h2{font-size:14pt;margin:14pt 0 4pt;border-bottom:1px solid #999} #printArea h3{font-size:11.5pt;margin:8pt 0 2pt}
+  #printArea .pm{color:#555;font-size:9.5pt} #printArea .pn{white-space:pre-wrap;margin:2pt 0 6pt} #printArea section{break-inside:avoid}
+}
 .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--tabh) + 14px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:9px 14px;border-radius:10px;font-size:14px;z-index:50;max-width:calc(100% - 32px)}
 @media (min-width:760px){ .it{grid-template-columns:64px minmax(0,1fr)} .leg{margin-left:74px} }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
@@ -221,6 +229,7 @@ a{color:var(--accent)}
 
   <section class="view" id="v-dia" aria-label="My day">
     <div class="sec-h"><h2 id="diaTitle">My day</h2><span class="muted" id="diaSum" style="font-size:13px"></span></div>
+    <div id="bkBanner"></div>
     <div id="agora"></div>
     <div id="diaAlerts"></div>
     <div id="sendBanner"></div>
@@ -231,7 +240,7 @@ a{color:var(--accent)}
     <details class="box" id="fechBox" style="margin-top:18px"><summary id="fechSum">End of day</summary>
       <p class="note-s" style="margin:8px 0">At the end of the day, tap Share on each item to send notes and photos to your email, Notes or WhatsApp. Also download a backup.</p>
       <div id="fechList" style="display:flex;flex-direction:column;gap:8px"></div>
-      <div class="mailbar" style="margin-top:10px"><button class="btn" type="button" id="sendQueue" hidden>Upload saved photos and videos</button><button class="btn primary" type="button" id="sendAll">Download notes backup</button><span class="note-s" id="fechState"></span></div>
+      <div class="mailbar" style="margin-top:10px"><button class="btn" type="button" id="sendQueue" hidden>Upload saved photos and videos</button><button class="btn primary" type="button" id="bkPdf3">Export PDF</button><button class="btn" type="button" id="bkMail3">Email my notes</button><button class="btn" type="button" id="sendAll">Download backup</button><span class="note-s" id="fechState"></span></div>
     </details>
     <div class="addbar">
       <button class="btn primary" id="addPersonal" type="button">+ Personal event</button>
@@ -348,7 +357,7 @@ a{color:var(--accent)}
     <details class="box" open><summary>Social and entertainment this week</summary><div id="socAll" style="margin-top:8px"></div></details>
     <details class="box"><summary>Your data</summary><div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
       <p class="note-s" style="margin:0">Your schedule, notes and photos stay on this phone, in the browser. Nothing is sent to any server. Do not clear Safari data during the meeting, and back up your notes.</p>
-      <div class="mailbar"><button class="btn" type="button" id="bkDown">Download backup</button><label class="btn" style="cursor:pointer">Import backup<input type="file" id="bkUp" accept="application/json,.json" hidden></label><button class="btn" type="button" id="editTopics2">Subspecialties</button></div></div></details>
+      <div class="mailbar"><button class="btn primary" type="button" id="bkPdf">Export PDF</button><button class="btn" type="button" id="bkMail">Email my notes</button><button class="btn" type="button" id="bkDown">Download backup</button><label class="btn" style="cursor:pointer">Import backup<input type="file" id="bkUp" accept="application/json,.json" hidden></label><button class="btn" type="button" id="editTopics2">Subspecialties</button></div></div></details>
     <details class="box" id="fredBox" hidden><summary id="fredSum"></summary><div id="fredList"></div></details>
     <div class="feed" id="feed" hidden></div>
     <p class="note-s"><b>Unofficial guide</b>, built by colleagues, not affiliated with RSNA. It uses <b>only public event information</b>: the session catalog, speaker list and exhibitor list published by RSNA. No internal or privileged information was used. Program copied on Nov 12, 2026: confirm rooms and times in the official RSNA app. Walking times are estimates. Open code on GitHub: github.com/andrecoura1/guia-rsna-2026</p>
@@ -374,6 +383,7 @@ a{color:var(--accent)}
 <div class="scrim" id="scrim" hidden></div>
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden><div class="sheet-in" id="sheetIn"></div></div>
 <div class="toast" id="toast" hidden></div>
+<div id="printArea" aria-hidden="true"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <script>
@@ -413,10 +423,11 @@ const fol = {
 };
 const fid = key=>key.replace(/[^A-Za-z0-9_\-.~:@+]/g,"_").slice(0,190);
 const isFol = key=>!!FOL[fid(key)];
+const markEdit = ()=>{ try{ localStorage.setItem("rsna26p-lastEdit", String(Date.now())); }catch(e){} };
 const store = {
-  async put(id, data){ AG[id] = {...data}; render(); if(db){ try{ await db.doc("agenda/"+id).set(data); }catch(e){ toast("Not saved: "+(e.code||"erro")); } } else LS.set("rsna26p-ag", AG); },
-  async patch(id, part){ AG[id] = {...(AG[id]||{}), ...part}; render(); if(db){ try{ await db.doc("agenda/"+id).update(part); }catch(e){ toast("Not saved: "+(e.code||"erro")); } } else LS.set("rsna26p-ag", AG); },
-  async del(id){ delete AG[id]; render(); if(db){ try{ await db.doc("agenda/"+id).delete(); }catch(e){ toast("Not removed: "+(e.code||"erro")); } } else LS.set("rsna26p-ag", AG); }
+  async put(id, data){ markEdit(); AG[id] = {...data}; render(); if(db){ try{ await db.doc("agenda/"+id).set(data); }catch(e){ toast("Not saved: "+(e.code||"erro")); } } else LS.set("rsna26p-ag", AG); },
+  async patch(id, part){ markEdit(); AG[id] = {...(AG[id]||{}), ...part}; render(); if(db){ try{ await db.doc("agenda/"+id).update(part); }catch(e){ toast("Not saved: "+(e.code||"erro")); } } else LS.set("rsna26p-ag", AG); },
+  async del(id){ markEdit(); delete AG[id]; render(); if(db){ try{ await db.doc("agenda/"+id).delete(); }catch(e){ toast("Not removed: "+(e.code||"erro")); } } else LS.set("rsna26p-ag", AG); }
 };
 
 /* ---------- resolving agenda docs into timed items ---------- */
@@ -568,7 +579,7 @@ function renderDia(){
     $("#colList").innerHTML = col.map(({p,r})=>{ const on=!!AG[r.id]; return `<div class="crow">${avatar(p,32)}<div style="min-width:0"><span class="mono" style="font-size:12px">${esc(r.when.split(" · ")[1]||"")} · ${esc(r.r||"")}</span><br><b style="font-weight:600">${esc(p[1])}</b> <span class="muted">${ROLE[r.role]}</span>: ${esc(r.t)}</div>${r.kind==="p"?`<button class="add" type="button" data-talk="${esc(r.code)}" data-sid="${r.sid}">${on?"✓":"+"}</button>`:`<button class="add" type="button" data-add="${r.sid}">${on?"✓":"+"}</button>`}</div>`; }).join(""); }
   const soc = DATA.filter(d=>d.so && d.d===day);
   $("#socBox").hidden = !soc.length; if(soc.length){ $("#socSum").textContent = `Social and entertainment today (${soc.length})`; $("#socList").innerHTML = socialHtml(soc); }
-  renderSendBanner(); renderFechamento(); renderAgora();
+  renderSendBanner(); renderFechamento(); renderAgora(); renderBackupBanner();
   const ex = Object.keys(AG).map(resolve).filter(i=>i && (i.exh || ((i.loose||i.contact) && i.d===day)));
   $("#noTime").innerHTML = ex.length ? `<h3 style="font-size:16px;margin:22px 0 4px">Notebook, people and unscheduled items (${ex.length})</h3><p class="note-s" style="margin:0 0 8px">Loose notes and people you met today, plus Education Exhibits (Learning Center, Lakeside level 3).</p>` + ex.map(i=>itemCard(i)).join("") : "";
   ["N","S","W","E"].forEach(b=>{ const g=document.getElementById("m"+b); if(g) g.style.opacity = m.items.length && !m.items.some(d=>d.b===b) ? .35 : 1; });
@@ -1037,8 +1048,63 @@ setInterval(()=>{ if(navigator.onLine && !ecoOn()) processQueue(); }, 60000);
 setInterval(()=>{ if(view==="dia" && !document.hidden) renderAgora(); }, 30000);
 
 /* ---------- backup ---------- */
-function downloadBackup(){ const data={app:"guia-rsna-2026",at:new Date().toISOString(),agenda:AG,seguindo:FOL,especialidades:[...myTopics]}; const b=new Blob([JSON.stringify(data,null,1)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download=`guia-rsna-2026-backup-${new Date().toISOString().slice(0,10)}.json`; document.body.appendChild(a); a.click(); a.remove(); toast("Backup downloaded (text; photos stay on the phone)"); }
-function importBackup(file){ const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(r.result); if(d.app!=="guia-rsna-2026") throw 0; AG={...AG,...(d.agenda||{})}; FOL={...FOL,...(d.seguindo||{})}; LS.set("rsna26p-ag",AG); LS.set("rsna26p-fol",FOL); if(d.especialidades){ myTopics=new Set(d.especialidades); LS.set("rsna26p-topics",[...myTopics]); } renderChips(); render(); toast("Backup imported"); }catch(e){ toast("Invalid backup file"); } }; r.readAsText(file); }
+function downloadBackup(){ markBackup(); setTimeout(renderBackupBanner,0); const data={app:"guia-rsna-2026",at:new Date().toISOString(),agenda:AG,seguindo:FOL,especialidades:[...myTopics],cartao:LS.get(BC_KEY,{})}; const b=new Blob([JSON.stringify(data,null,1)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download=`guia-rsna-2026-backup-${new Date().toISOString().slice(0,10)}.json`; document.body.appendChild(a); a.click(); a.remove(); toast("Backup downloaded (text; photos stay on the phone)"); }
+function importBackup(file){ const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(r.result); if(d.app!=="guia-rsna-2026") throw 0; AG={...AG,...(d.agenda||{})}; FOL={...FOL,...(d.seguindo||{})}; LS.set("rsna26p-ag",AG); LS.set("rsna26p-fol",FOL); if(d.especialidades){ myTopics=new Set(d.especialidades); LS.set("rsna26p-topics",[...myTopics]); } if(d.cartao){ LS.set(BC_KEY, d.cartao); } LS.set("rsna26p-seeded", true); renderChips(); render(); toast("Backup imported"); }catch(e){ toast("Invalid backup file"); } }; r.readAsText(file); }
+
+/* ---------- backup: lembrete, PDF, e-mail ---------- */
+const lastEdit = ()=>+(LS.get("rsna26p-lastEdit",0)||0);
+const lastBackup = ()=>+(LS.get("rsna26p-lastBackup",0)||0);
+const markBackup = ()=>LS.set("rsna26p-lastBackup", Date.now());
+function hasNotes(){ return Object.values(AG).some(a=>a && (a.note||a.contacts||a.plaud||a.links||(a.media&&a.media.length)||a.kind==="k")); }
+function renderBackupBanner(){
+  const el=$("#bkBanner"); if(!el) return;
+  const now=chicagoNow(); const lb=lastBackup(), le=lastEdit();
+  const lbDay = lb ? new Intl.DateTimeFormat("en-CA",{timeZone:"America/Chicago"}).format(new Date(lb)) : "";
+  const due = hasNotes() && le>lb && (now.m>=18*60 || (lbDay && lbDay<now.d) || !lb);
+  el.innerHTML = due ? `<div class="banner"><b>Back up today</b><span class="note-s">Your notes live only on this phone. Keep a copy:</span><div class="mailbar"><button class="btn primary" type="button" id="bkPdf2">Export PDF</button><button class="btn" type="button" id="bkMail2">Email my notes</button><button class="btn" type="button" id="bkDown2">Download backup</button><button class="btn ghost" type="button" id="bkLater">Later</button></div></div>` : "";
+}
+function reportItems(){
+  const out=[];
+  for(const [k,w,l] of DAYS){ const m=dayModel(k); const it=m.items.filter(i=>i.a.pick!==false); const loose=Object.keys(AG).map(resolve).filter(i=>i&&(i.loose)&&i.d===k); if(it.length||loose.length) out.push({k,w,l,it,loose}); }
+  return out;
+}
+function reportText(){
+  const L=[]; const c=getCard();
+  L.push("RSNA 2026 · my notes"); L.push(new Date().toLocaleString("en-US"));
+  for(const d of reportItems()){ L.push("", `== ${d.w} ${d.l} ==`);
+    for(const i of d.it){ const a=i.a; L.push(`${hm(i.s)}–${hm(end(i))} · ${i.r}${i.c?" · "+i.c:""}`, i.t); if(a.note) L.push(a.note); if(a.plaud) L.push("Recording: "+a.plaud); if(a.links) L.push("Links: "+a.links); L.push(""); }
+    for(const i of d.loose){ if(i.a.note){ L.push("Day notebook:", i.a.note, ""); } } }
+  const met=Object.values(AG).filter(a=>a&&a.kind==="k");
+  if(met.length){ L.push("== People I met =="); for(const a of met){ L.push(`${a.name||"No name"}${a.inst?" · "+a.inst:""}${a.country?" · "+cname(a.country):""}`); if(a.contacts) L.push(a.contacts); if(a.note) L.push(a.note); L.push(""); } }
+  const st=Object.values(AG).filter(a=>a&&a.kind==="x"&&(a.visited||a.note||a.contacts));
+  if(st.length){ L.push("== Booths =="); for(const a of st){ const x=XB[a.xid]; L.push(`${x?x[1]:a.xid}${x?" · booth "+x[3]:""}${a.visited?" · visited":""}`); if(a.contacts) L.push(a.contacts); if(a.note) L.push(a.note); L.push(""); } }
+  const ex=Object.values(AG).filter(a=>a&&a.kind==="e"&&a.note);
+  if(ex.length){ L.push("== Education Exhibits =="); for(const a of ex){ const e=EXBY[a.code]; L.push(`${a.code} · ${e?e[1]:""}`, a.note, ""); } }
+  L.push("", "Unofficial RSNA 2026 guide. Always check the official program: rsna.org/annual-meeting");
+  return L.join("\n");
+}
+function reportHtml(){
+  const P=t=>esc(t||"");
+  let h=`<h1>RSNA 2026 · my notes</h1><div class="pm">${P(new Date().toLocaleString("en-US"))} · unofficial guide · check the official program at rsna.org/annual-meeting</div>`;
+  for(const d of reportItems()){ h+=`<h2>${P(d.w+" "+d.l)}</h2>`;
+    for(const i of d.it){ const a=i.a; h+=`<section><h3>${hm(i.s)}–${hm(end(i))} · ${P(i.t)}</h3><div class="pm">${P(i.r)}${i.c?" · "+P(i.c):""}${a.para==="fred"?" · for a colleague":""}</div>${a.note?`<div class="pn">${P(a.note)}</div>`:""}${a.plaud?`<div class="pn"><b>Recording:</b> ${P(a.plaud)}</div>`:""}${a.links?`<div class="pn"><b>Links:</b> ${P(a.links)}</div>`:""}${(a.media&&a.media.length)?`<div class="pm">${a.media.length} photo(s)/video(s) saved in the app</div>`:""}</section>`; }
+    for(const i of d.loose){ if(i.a.note) h+=`<section><h3>Day notebook</h3><div class="pn">${P(i.a.note)}</div></section>`; } }
+  const met=Object.values(AG).filter(a=>a&&a.kind==="k");
+  if(met.length){ h+=`<h2>People I met</h2>`+met.map(a=>`<section><h3>${a.country?flag(a.country)+" ":""}${P(a.name||"No name")}</h3><div class="pm">${P(a.inst||"")}${a.country?" · "+P(cname(a.country)):""}</div>${a.contacts?`<div class="pn">${P(a.contacts)}</div>`:""}${a.note?`<div class="pn">${P(a.note)}</div>`:""}</section>`).join(""); }
+  const st=Object.values(AG).filter(a=>a&&a.kind==="x"&&(a.visited||a.note||a.contacts));
+  if(st.length){ h+=`<h2>Booths</h2>`+st.map(a=>{ const x=XB[a.xid]; return `<section><h3>${P(x?x[1]:a.xid)}${a.visited?" ✓":""}</h3><div class="pm">${x?P(x[2]+" · booth "+x[3]):""}</div>${a.contacts?`<div class="pn">${P(a.contacts)}</div>`:""}${a.note?`<div class="pn">${P(a.note)}</div>`:""}</section>`; }).join(""); }
+  return h;
+}
+function exportPdf(){
+  const pa=$("#printArea"); pa.innerHTML=reportHtml();
+  setTimeout(()=>{ try{ window.print(); markBackup(); renderBackupBanner(); }catch(e){ toast("Could not open print"); } },50);
+}
+async function emailNotes(){
+  const text=reportText(); const subject="RSNA 2026 · my notes";
+  try{ if(navigator.share){ await navigator.share({title:subject, text}); markBackup(); renderBackupBanner(); return; } }catch(e){ if(e&&e.name==="AbortError") return; }
+  location.href="mailto:?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(text.length>1800?text.slice(0,1800)+"\n…(full text: use Export PDF)":text);
+  markBackup(); renderBackupBanner();
+}
 
 /* ---------- mídia local (IndexedDB, só neste celular) ---------- */
 const MDB = new Promise(res=>{ try{ const r=indexedDB.open("rsna26p-midia",1); r.onupgradeneeded=()=>r.result.createObjectStore("m"); r.onsuccess=()=>res(r.result); r.onerror=()=>res(null); }catch(e){ res(null); } });
@@ -1250,7 +1316,12 @@ document.addEventListener("click", e=>{
   if((b=g("[data-mail]"))){ const id=b.dataset.mail; b.disabled=true; const st = $("#sheet").hidden ? $("#bannerState") : $("#mailState"); sendItemEmail(id, st).finally(()=>{ b.disabled=false; if(!$("#sheet").hidden && openId===id) { const keep=$("#mailState")&&$("#mailState").textContent; renderSheet(); if($("#mailState")&&keep) $("#mailState").textContent=keep; } }); return; }
   if(t.id==="sendQueue"){ t.disabled=true; processQueue(true).finally(()=>{ t.disabled=false; const fs=$("#fechState"); if(fs) fs.textContent = qCount? `${qCount} ainda na fila (sem conexão?)` : "Fotos e vídeos enviados."; renderQueueBadge(); }); return; }
   if(t.id==="ecoTg"){ const v=!ecoOn(); LS.set("rsna26-eco", v); t.setAttribute("aria-pressed", v); t.textContent = v?"Ligada: no 4G só prévias de foto; originais e vídeos no Wi-Fi":"Desligada: envia tudo na hora"; if(!v) processQueue(); return; }
-  if(t.id==="bkDown"){ downloadBackup(); return; }
+  if(t.id==="bkDown"||t.id==="bkDown2"){ downloadBackup(); return; }
+  if(t.id==="bkPdf3"){ exportPdf(); return; }
+  if(t.id==="bkMail3"){ emailNotes(); return; }
+  if(t.id==="bkPdf"||t.id==="bkPdf2"){ exportPdf(); return; }
+  if(t.id==="bkMail"||t.id==="bkMail2"){ emailNotes(); return; }
+  if(t.id==="bkLater"){ LS.set("rsna26p-lastBackup", lastEdit()); renderBackupBanner(); return; }
   if(t.id==="editTopics2"){ openTopics(); return; }
   if(t.id==="sendAll"){ t.disabled=true; sendAllPending().finally(()=>t.disabled=false); return; }
   if(t.id==="hotelTg"){ const v=!hotelMode(); LS.set("rsna26-hotel", v); t.setAttribute("aria-pressed", v); t.textContent = v?"Ligado: e-mails só no fechamento do dia":"Desligado: aviso logo que cada aula termina"; renderDia(); return; }
@@ -1335,6 +1406,7 @@ AG = LS.get("rsna26p-ag", {}); FOL = LS.get("rsna26p-fol", {});
 renderChips(); setView("dia"); try{ if(false){ const ec=$("#ecoTg"); ec.setAttribute("aria-pressed", ecoOn()); ec.textContent = ecoOn()?"Ligada: no 4G só prévias de foto; originais e vídeos no Wi-Fi":"Desligada: envia tudo na hora"; } }catch(e){}
 try{ if(false){ const h=$("#hotelTg"); h.setAttribute("aria-pressed", hotelMode()); } }catch(e){}
 assets = localAssets; online = false;
+try{ if("serviceWorker" in navigator && location.protocol==="https:") navigator.serviceWorker.register("sw.js").catch(()=>{}); }catch(e){}
 render();
 if(firstRun) setTimeout(openTopics, 300);
 </script>

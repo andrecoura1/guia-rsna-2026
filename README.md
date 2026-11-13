@@ -16,9 +16,13 @@ A pocket schedule for **RSNA 2026** (McCormick Place, Chicago, Nov 29 – Dec 3,
 - **Social:** receptions, live music, Exhibit Hall Social, After Dark.
 - **Map:** a schematic of McCormick Place and a walking-time table.
 
+## Works offline
+
+After you open it once, the guide is saved on your phone and opens without internet (handy at McCormick Place). Add it to your Home Screen for an app icon.
+
 ## Privacy
 
-Everything you mark, write or photograph stays **on your own phone** (browser storage). No login, no server. Use **Share** to send notes and photos to your email, Notes or WhatsApp, and **More › Your data › Download backup** from time to time. Do not clear Safari data during the meeting.
+Everything you mark, write or photograph stays **on your own phone** (browser storage). No login, no server. Use **Share** to send notes and photos to your email, Notes or WhatsApp, and back up from **More › Your data**: **Export PDF** (a report of your schedule, notes, people and booths), **Email my notes**, or **Download backup** (a file you can import again). A reminder shows up at the end of each day. Do not clear Safari data during the meeting.
 
 ## Tip
 
