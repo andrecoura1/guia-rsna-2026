@@ -1,5 +1,5 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#0b5563"><meta name="apple-mobile-web-app-title" content="Guia RSNA"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><title>Guia RSNA 2026</title>
-<meta name="description" content="Guia não oficial do RSNA 2026 para o celular: agenda por especialidade, choques de horário, caminhada entre salas, anotações e fotos.">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex, nofollow"><meta name="theme-color" content="#0b5563"><meta name="apple-mobile-web-app-title" content="RSNA Guide"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><title>RSNA 2026 Guide</title>
+<meta name="description" content="Unofficial RSNA 2026 pocket guide: schedule by subspecialty, session conflicts, walking time between rooms, notes and photos.">
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -207,151 +207,151 @@ a{color:var(--accent)}
 
 <div class="wrap">
   <header class="top">
-    <div class="brand"><h1>Guia RSNA 2026</h1><small id="syncState">não oficial · Chicago</small></div>
-    <nav class="days" id="days" aria-label="Dias do congresso"></nav>
+    <div class="brand"><h1>RSNA 2026 Guide</h1><small id="syncState">unofficial · Chicago</small></div>
+    <nav class="days" id="days" aria-label="Meeting days"></nav>
   </header>
 
-  <section class="view" id="v-dia" aria-label="Meu dia">
-    <div class="sec-h"><h2 id="diaTitle">Meu dia</h2><span class="muted" id="diaSum" style="font-size:13px"></span></div>
+  <section class="view" id="v-dia" aria-label="My day">
+    <div class="sec-h"><h2 id="diaTitle">My day</h2><span class="muted" id="diaSum" style="font-size:13px"></span></div>
     <div id="agora"></div>
     <div id="diaAlerts"></div>
     <div id="sendBanner"></div>
-    <details class="box" id="socBox" hidden><summary id="socSum">Social e entretenimento hoje</summary><div id="socList" style="margin-top:8px;display:flex;flex-direction:column;gap:8px"></div></details>
-    <details class="box" id="colBox" hidden><summary id="colSum">Colegas no programa hoje</summary><div id="colList" style="margin-top:8px;display:flex;flex-direction:column;gap:8px"></div></details>
+    <details class="box" id="socBox" hidden><summary id="socSum">Social and entertainment today</summary><div id="socList" style="margin-top:8px;display:flex;flex-direction:column;gap:8px"></div></details>
+    <details class="box" id="colBox" hidden><summary id="colSum">Colleagues presenting live today</summary><div id="colList" style="margin-top:8px;display:flex;flex-direction:column;gap:8px"></div></details>
     <div class="tl" id="tl"></div>
     <div id="noTime"></div>
-    <details class="box" id="fechBox" style="margin-top:18px"><summary id="fechSum">Fechamento do dia no hotel</summary>
-      <p class="note-s" style="margin:8px 0">No fim do dia: em cada item, toque em Compartilhar para mandar anotações e fotos para o seu e-mail, Notas ou WhatsApp. Faça também um backup.</p>
+    <details class="box" id="fechBox" style="margin-top:18px"><summary id="fechSum">End of day</summary>
+      <p class="note-s" style="margin:8px 0">At the end of the day, tap Share on each item to send notes and photos to your email, Notes or WhatsApp. Also download a backup.</p>
       <div id="fechList" style="display:flex;flex-direction:column;gap:8px"></div>
-      <div class="mailbar" style="margin-top:10px"><button class="btn" type="button" id="sendQueue" hidden>Enviar fotos e vídeos guardados</button><button class="btn primary" type="button" id="sendAll">Baixar backup das anotações</button><span class="note-s" id="fechState"></span></div>
+      <div class="mailbar" style="margin-top:10px"><button class="btn" type="button" id="sendQueue" hidden>Upload saved photos and videos</button><button class="btn primary" type="button" id="sendAll">Download notes backup</button><span class="note-s" id="fechState"></span></div>
     </details>
     <div class="addbar">
-      <button class="btn primary" id="addPersonal" type="button">+ Compromisso pessoal</button>
-      <button class="btn" id="goProg" type="button">Adicionar do programa</button>
-      <button class="btn ghost" id="copyBtn" type="button">Copiar agenda</button>
-      <button class="btn ghost" id="dayMail" type="button">Compartilhar o dia</button>
+      <button class="btn primary" id="addPersonal" type="button">+ Personal event</button>
+      <button class="btn" id="goProg" type="button">Add from program</button>
+      <button class="btn ghost" id="copyBtn" type="button">Copy schedule</button>
+      <button class="btn ghost" id="dayMail" type="button">Share the day</button>
     </div>
   </section>
 
-  <section class="view" id="v-prog" aria-label="Programa" hidden>
+  <section class="view" id="v-prog" aria-label="Program" hidden>
     <div class="filters">
-      <input type="search" id="q" placeholder="Buscar título, palestrante, sala ou código" aria-label="Buscar no programa">
+      <input type="search" id="q" placeholder="Search title, speaker, room or code" aria-label="Search program">
       <div class="fchips" id="tagChips"></div>
       <div class="frow">
-        <select id="kindSel" aria-label="Formato">
-          <option value="">Todos os formatos</option>
-          <option value="aula">Aulas e cursos</option>
-          <option value="sci">Sessões científicas</option>
-          <option value="post">Discussões de pôster</option>
-          <option value="ind">Indústria (non-CME)</option>
-          <option value="edex">Education Exhibits (sem horário)</option>
-          <option value="so">Social e entretenimento</option>
+        <select id="kindSel" aria-label="Format">
+          <option value="">All formats</option>
+          <option value="aula">Courses and lectures</option>
+          <option value="sci">Scientific sessions</option>
+          <option value="post">Poster discussions</option>
+          <option value="ind">Industry (non-CME)</option>
+          <option value="edex">Education Exhibits (unscheduled)</option>
+          <option value="so">Social and entertainment</option>
         </select>
-        <button class="btn" type="button" id="editTopics">Especialidades</button>
+        <button class="btn" type="button" id="editTopics">Subspecialties</button>
       </div>
       <div class="muted" id="count" style="font-size:13px"></div>
     </div>
     <div id="list"></div>
   </section>
 
-  <section class="view" id="v-pessoas" aria-label="Pessoas" hidden>
-    <div class="sec-h"><h2>Pessoas</h2></div>
-    <input type="search" id="pq" placeholder="Nome ou instituição" aria-label="Buscar pessoa">
-    <h3 style="font-size:16px;margin:16px 0 6px">Seguindo <span class="muted" id="folCount"></span></h3>
+  <section class="view" id="v-pessoas" aria-label="People" hidden>
+    <div class="sec-h"><h2>People</h2></div>
+    <input type="search" id="pq" placeholder="Name or institution" aria-label="Search people">
+    <h3 style="font-size:16px;margin:16px 0 6px">Following <span class="muted" id="folCount"></span></h3>
     <div id="folList" class="plist"></div>
-    <div class="sec-h" style="margin:18px 0 6px"><h3 style="font-size:16px">Busca</h3><button class="fchip" type="button" id="liveOnly" aria-pressed="true">Só quem estará ao vivo</button></div>
+    <div class="sec-h" style="margin:18px 0 6px"><h3 style="font-size:16px">Search</h3><button class="fchip" type="button" id="liveOnly" aria-pressed="true">Presenting live only</button></div>
     <div id="pRes" class="plist"></div>
   </section>
 
-  <section class="view" id="v-estandes" aria-label="Estandes" hidden>
-    <div class="sec-h"><h2>Estandes</h2><span class="muted" id="xSum" style="font-size:13px"></span></div>
-    <p class="note-s" style="margin:0 0 10px">A exposição abre de domingo a quarta. Monte sua rota com ＋, depois marque cada estande como visitado e anote quem você conheceu e o que viu de novo.</p>
+  <section class="view" id="v-estandes" aria-label="Booths" hidden>
+    <div class="sec-h"><h2>Booths</h2><span class="muted" id="xSum" style="font-size:13px"></span></div>
+    <p class="note-s" style="margin:0 0 10px">The exhibit halls are open Sunday to Wednesday. Build your route with ＋, then mark each booth as visited and note who you met and what was new.</p>
     <div class="fchips" id="xChips"></div>
-    <input type="search" id="xq" placeholder="Buscar expositor, estande ou produto" aria-label="Buscar expositor" style="margin-top:10px">
+    <input type="search" id="xq" placeholder="Search exhibitor, booth or product" aria-label="Search exhibitors" style="margin-top:10px">
     <div id="xList" style="margin-top:10px"></div>
     <div id="xRes" class="plist" hidden></div>
   </section>
 
-  <section class="view" id="v-mapa" aria-label="Mapa" hidden>
+  <section class="view" id="v-mapa" aria-label="Map" hidden>
     <div class="sec-h"><h2>McCormick Place</h2></div>
     <div class="svgbox">
-      <svg viewBox="0 0 660 420" role="img" aria-label="Esquema dos quatro prédios do McCormick Place">
+      <svg viewBox="0 0 660 420" role="img" aria-label="Diagram of the four McCormick Place buildings">
         <rect x="0" y="0" width="660" height="420" fill="var(--surface)"/>
         <rect x="604" y="0" width="56" height="420" fill="var(--ai-soft)"/>
-        <text x="632" y="210" fill="var(--ai)" font-size="12" text-anchor="middle" transform="rotate(90 632 210)">Lago Michigan</text>
+        <text x="632" y="210" fill="var(--ai)" font-size="12" text-anchor="middle" transform="rotate(90 632 210)">Lake Michigan</text>
         <rect x="400" y="0" width="22" height="420" fill="var(--line)"/>
         <text x="411" y="400" fill="var(--muted)" font-size="10.5" text-anchor="middle" transform="rotate(-90 411 400)">Lake Shore Dr</text>
         <g id="mW"><rect x="16" y="70" width="130" height="250" rx="8" fill="var(--bg)" stroke="var(--bW)" stroke-width="2"/>
         <text x="81" y="100" fill="var(--bW)" font-size="15" font-weight="700" text-anchor="middle">WEST</text>
-        <text x="81" y="120" fill="var(--muted)" font-size="11" text-anchor="middle">salas W1xx–W4xx</text>
-        <text x="81" y="295" fill="var(--muted)" font-size="10.5" text-anchor="middle">nível 1: transporte</text></g>
+        <text x="81" y="120" fill="var(--muted)" font-size="11" text-anchor="middle">rooms W1xx–W4xx</text>
+        <text x="81" y="295" fill="var(--muted)" font-size="10.5" text-anchor="middle">level 1: transportation</text></g>
         <g id="mN"><rect x="172" y="30" width="200" height="140" rx="8" fill="var(--bg)" stroke="var(--bN)" stroke-width="2"/>
         <text x="272" y="60" fill="var(--bN)" font-size="15" font-weight="700" text-anchor="middle">NORTH</text>
-        <text x="272" y="80" fill="var(--muted)" font-size="11" text-anchor="middle">salas N1xx–N4xx</text>
-        <text x="272" y="105" fill="var(--ink)" font-size="11.5" text-anchor="middle">North Hall B · exposição</text></g>
+        <text x="272" y="80" fill="var(--muted)" font-size="11" text-anchor="middle">rooms N1xx–N4xx</text>
+        <text x="272" y="105" fill="var(--ink)" font-size="11.5" text-anchor="middle">North Hall B · exhibits</text></g>
         <g id="mS"><rect x="172" y="230" width="200" height="160" rx="8" fill="var(--bg)" stroke="var(--bS)" stroke-width="2"/>
         <text x="272" y="260" fill="var(--bS)" font-size="15" font-weight="700" text-anchor="middle">SOUTH</text>
-        <text x="272" y="280" fill="var(--muted)" font-size="11" text-anchor="middle">salas S1xx–S5xx</text>
-        <text x="272" y="305" fill="var(--ink)" font-size="11.5" text-anchor="middle">South Hall A · exposição</text>
-        <text x="272" y="323" fill="var(--ink)" font-size="11.5" text-anchor="middle">AI Showcase · AI Theater (nível 3)</text>
+        <text x="272" y="280" fill="var(--muted)" font-size="11" text-anchor="middle">rooms S1xx–S5xx</text>
+        <text x="272" y="305" fill="var(--ink)" font-size="11.5" text-anchor="middle">South Hall A · exhibits</text>
+        <text x="272" y="323" fill="var(--ink)" font-size="11.5" text-anchor="middle">AI Showcase · AI Theater (level 3)</text>
         <text x="272" y="341" fill="var(--ink)" font-size="11.5" text-anchor="middle">Industry Expert Theater</text></g>
         <rect x="250" y="170" width="44" height="60" fill="var(--accent-soft)"/>
         <text x="300" y="196" fill="var(--accent)" font-size="10.5">Grand Concourse</text>
-        <text x="300" y="210" fill="var(--accent)" font-size="10.5">(nível 2.5)</text>
+        <text x="300" y="210" fill="var(--accent)" font-size="10.5">(level 2.5)</text>
         <rect x="146" y="188" width="104" height="22" fill="var(--accent-soft)"/>
         <rect x="372" y="160" width="62" height="20" fill="var(--accent-soft)"/>
-        <text x="403" y="153" fill="var(--accent)" font-size="10" text-anchor="middle">passarela</text>
+        <text x="403" y="153" fill="var(--accent)" font-size="10" text-anchor="middle">skybridge</text>
         <g id="mE"><rect x="434" y="70" width="160" height="260" rx="8" fill="var(--bg)" stroke="var(--bE)" stroke-width="2"/>
         <text x="514" y="100" fill="var(--bE)" font-size="15" font-weight="700" text-anchor="middle">LAKESIDE</text>
-        <text x="514" y="116" fill="var(--bE)" font-size="11" text-anchor="middle">(East) · salas E2xx–E4xx</text>
+        <text x="514" y="116" fill="var(--bE)" font-size="11" text-anchor="middle">(East) · rooms E2xx–E4xx</text>
         <text x="514" y="150" fill="var(--ink)" font-size="11.5" text-anchor="middle">Learning Center</text>
-        <text x="514" y="166" fill="var(--ink)" font-size="11.5" text-anchor="middle">e seus Theaters (nível 3)</text>
-        <text x="514" y="190" fill="var(--ink)" font-size="11.5" text-anchor="middle">pôsteres · Education Exhibits</text>
+        <text x="514" y="166" fill="var(--ink)" font-size="11.5" text-anchor="middle">and its Theaters (level 3)</text>
+        <text x="514" y="190" fill="var(--ink)" font-size="11.5" text-anchor="middle">posters · Education Exhibits</text>
         <text x="514" y="225" fill="var(--ink)" font-size="11.5" text-anchor="middle">Arie Crown Theater</text>
-        <text x="514" y="260" fill="var(--muted)" font-size="10.5" text-anchor="middle">Hall E (nível 2)</text></g>
-        <text x="16" y="408" fill="var(--muted)" font-size="10.5">Esquema fora de escala. Prédios usados no dia escolhido ficam destacados.</text>
+        <text x="514" y="260" fill="var(--muted)" font-size="10.5" text-anchor="middle">Hall E (level 2)</text></g>
+        <text x="16" y="408" fill="var(--muted)" font-size="10.5">Not to scale. Buildings used on the selected day are highlighted.</text>
       </svg>
     </div>
     <div class="keys">
-      <div><h3>Como ler o número da sala</h3>
-        <p class="muted" style="margin:4px 0 0;font-size:14px">A letra é o prédio e o primeiro dígito é o andar. <span class="mono">S403A</span> = South, nível 4. <span class="mono">E450B</span> = Lakeside, nível 4. <span class="mono">N226</span> = North, nível 2.</p></div>
-      <div><h3>Caminhada estimada (minutos)</h3>
-        <div style="overflow-x:auto"><table aria-label="Tempo de caminhada entre prédios"><thead><tr><th>De / para</th><th>North</th><th>South</th><th>West</th><th>Lakeside</th></tr></thead><tbody id="walkTbl"></tbody></table></div>
-        <p class="note-s">Passo normal, contando escada rolante. Em horário de pico some 3–5 min. No mesmo prédio: ~2 min no mesmo andar, ~5 min trocando de andar.</p></div>
-      <div><h3>Pontos-chave</h3><ul>
-        <li><b>Learning Center</b> (pôsteres, Education Exhibits, Learning Center Theaters): Lakeside Center East, nível 3.</li>
-        <li><b>AI Showcase</b> e <b>AI Theater</b>: South Hall A, nível 3 (estandes 5536 e 4729).</li>
-        <li><b>Exposição técnica</b>: North Hall B e South Hall A.</li>
-        <li><b>Grand Concourse</b> (nível 2.5) liga North e South; dele sai a passarela para o Lakeside.</li></ul></div>
-      <div><h3>Mapas oficiais</h3><ul>
-        <li><a href="https://rsna2026.mapyourshow.com/8_0/floorplan/" target="_blank" rel="noopener">Planta da exposição (Map Your Show)</a></li>
-        <li><a href="https://www.mccormickplace.com/" target="_blank" rel="noopener">McCormick Place: mapas dos prédios</a></li>
-        <li><a href="https://cattendee.abstractsonline.com/meeting/21552/pages/onsite-services" target="_blank" rel="noopener">RSNA: serviços no local</a></li></ul></div>
+      <div><h3>How to read room numbers</h3>
+        <p class="muted" style="margin:4px 0 0;font-size:14px">The letter is the building and the first digit is the level. <span class="mono">S403A</span> = South, level 4. <span class="mono">E450B</span> = Lakeside, level 4. <span class="mono">N226</span> = North, level 2.</p></div>
+      <div><h3>Estimated walking time (minutes)</h3>
+        <div style="overflow-x:auto"><table aria-label="Walking time between buildings"><thead><tr><th>From / to</th><th>North</th><th>South</th><th>West</th><th>Lakeside</th></tr></thead><tbody id="walkTbl"></tbody></table></div>
+        <p class="note-s">Normal pace, including escalators. Add 3–5 min at peak times. Same building: ~2 min on the same level, ~5 min between levels.</p></div>
+      <div><h3>Key spots</h3><ul>
+        <li><b>Learning Center</b> (posters, Education Exhibits, Learning Center Theaters): Lakeside Center East, level 3.</li>
+        <li><b>AI Showcase</b> e <b>AI Theater</b>: South Hall A, level 3 (booths 5536 and 4729).</li>
+        <li><b>Technical exhibits</b>: North Hall B and South Hall A.</li>
+        <li><b>Grand Concourse</b> (level 2.5) connects North and South; the skybridge to Lakeside starts there.</li></ul></div>
+      <div><h3>Official maps</h3><ul>
+        <li><a href="https://rsna2026.mapyourshow.com/8_0/floorplan/" target="_blank" rel="noopener">Exhibit floor plan (Map Your Show)</a></li>
+        <li><a href="https://www.mccormickplace.com/" target="_blank" rel="noopener">McCormick Place: building maps</a></li>
+        <li><a href="https://cattendee.abstractsonline.com/meeting/21552/pages/onsite-services" target="_blank" rel="noopener">RSNA: onsite services</a></li></ul></div>
     </div>
   </section>
 
-  <section class="view" id="v-avisos" aria-label="Avisos" hidden>
-    <div class="sec-h"><h2>Mais</h2></div>
+  <section class="view" id="v-avisos" aria-label="More" hidden>
+    <div class="sec-h"><h2>More</h2></div>
     <div class="status" id="monStatus" hidden></div>
-    <details class="box" open><summary>Social e entretenimento da semana</summary><div id="socAll" style="margin-top:8px"></div></details>
-    <details class="box"><summary>Seus dados</summary><div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
-      <p class="note-s" style="margin:0">Agenda, anotações e fotos ficam só neste celular, no navegador. Nada vai para servidor nenhum. Não limpe os dados do Safari durante o congresso e faça backup das anotações.</p>
-      <div class="mailbar"><button class="btn" type="button" id="bkDown">Baixar backup</button><label class="btn" style="cursor:pointer">Importar backup<input type="file" id="bkUp" accept="application/json,.json" hidden></label><button class="btn" type="button" id="editTopics2">Especialidades</button></div></div></details>
+    <details class="box" open><summary>Social and entertainment this week</summary><div id="socAll" style="margin-top:8px"></div></details>
+    <details class="box"><summary>Your data</summary><div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
+      <p class="note-s" style="margin:0">Your schedule, notes and photos stay on this phone, in the browser. Nothing is sent to any server. Do not clear Safari data during the meeting, and back up your notes.</p>
+      <div class="mailbar"><button class="btn" type="button" id="bkDown">Download backup</button><label class="btn" style="cursor:pointer">Import backup<input type="file" id="bkUp" accept="application/json,.json" hidden></label><button class="btn" type="button" id="editTopics2">Subspecialties</button></div></div></details>
     <details class="box" id="fredBox" hidden><summary id="fredSum"></summary><div id="fredList"></div></details>
     <div class="feed" id="feed" hidden></div>
-    <p class="note-s"><b>Guia não oficial</b>, feito por colegas, sem vínculo com o RSNA. Usa <b>apenas informações públicas do evento</b>: o catálogo de sessões, a lista de palestrantes e a lista de expositores divulgados pelo RSNA. Nenhuma informação interna ou privilegiada foi usada. Programa copiado em 12/11/2026: confira salas e horários no app oficial do RSNA. Tempos de caminhada são estimativas.</p>
+    <p class="note-s"><b>Unofficial guide</b>, built by colleagues, not affiliated with RSNA. It uses <b>only public event information</b>: the session catalog, speaker list and exhibitor list published by RSNA. No internal or privileged information was used. Program copied on Nov 12, 2026: confirm rooms and times in the official RSNA app. Walking times are estimates. Open code on GitHub: github.com/andrecoura1/guia-rsna-2026</p>
   </section>
 </div>
 
-<nav class="tabs" role="tablist" aria-label="Seções">
-  <button class="tab" role="tab" data-v="dia" aria-selected="true" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Meu dia</button>
-  <button class="tab" role="tab" data-v="prog" aria-selected="false" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h9"/></svg>Programa</button>
-  <button class="tab" role="tab" data-v="pessoas" aria-selected="false" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.6-.3 4.5 1.4 5 4.3"/></svg>Pessoas</button>
-  <button class="tab" role="tab" data-v="estandes" aria-selected="false" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10h16v10H4z"/><path d="M3 10l2-5h14l2 5M9 20v-5h6v5"/></svg>Estandes</button>
-  <button class="tab" role="tab" data-v="mais" aria-selected="false" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4Z"/><path d="M9 4v14M15 6v14"/></svg>Mais<span class="badge" id="avBadge" hidden></span></button>
+<nav class="tabs" role="tablist" aria-label="Sections">
+  <button class="tab" role="tab" data-v="dia" aria-selected="true" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>My day</button>
+  <button class="tab" role="tab" data-v="prog" aria-selected="false" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h9"/></svg>Program</button>
+  <button class="tab" role="tab" data-v="pessoas" aria-selected="false" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2c2.6-.3 4.5 1.4 5 4.3"/></svg>People</button>
+  <button class="tab" role="tab" data-v="estandes" aria-selected="false" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10h16v10H4z"/><path d="M3 10l2-5h14l2 5M9 20v-5h6v5"/></svg>Booths</button>
+  <button class="tab" role="tab" data-v="mais" aria-selected="false" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 4 3.5 6v14L9 18l6 2 5.5-2V4L15 6 9 4Z"/><path d="M9 4v14M15 6v14"/></svg>More<span class="badge" id="avBadge" hidden></span></button>
 </nav>
 
-<button class="fab" id="fab" type="button" aria-label="Capturar: foto, nota, pessoa">+</button>
+<button class="fab" id="fab" type="button" aria-label="Capture: photo, note, person">+</button>
 <input type="file" id="qaFoto" accept="image/*" capture="environment" hidden>
 <input type="file" id="qaVideo" accept="video/*" capture="environment" hidden>
 <input type="file" id="qaGal" accept="image/*,video/*" multiple hidden>
@@ -367,13 +367,13 @@ const EXBY = Object.fromEntries(EXH.map(e=>[e[0],e]));
 const XS = RAW.X||[], XO = RAW.XO||[];
 const XB = Object.fromEntries(XS.map(x=>[x[0],x])), XOB = Object.fromEntries(XO.map(x=>[x[0],x]));
 const TOPICS = RAW.T||[];
-const TSHORT = t=>TOPICS[t]?TOPICS[t].replace(/ Imaging$/,"").replace("Nuclear Medicine & Molecular","Medicina Nuclear"):"";
+const TSHORT = t=>TOPICS[t]?TOPICS[t].replace(/ Imaging$/,"").replace("Nuclear Medicine & Molecular","Nuclear Medicine"):"";
 const PBY = Object.fromEntries(PEOPLE.map(p=>[p[0],p]));
-const DAYS = [["2026-11-29","Dom","29/11"],["2026-11-30","Seg","30/11"],["2026-12-01","Ter","01/12"],["2026-12-02","Qua","02/12"],["2026-12-03","Qui","03/12"]];
-const TAGS = {bc:["Comp. corporal","var(--bc)"],pcct:["Photon-counting","var(--pcct)"],ai:["IA","var(--ai)"],msk:["MSK","var(--msk)"]};
-const FTAGS = {...TAGS, o:["Outros temas","var(--muted)"]};
-const KIND = {aula:"Aula",sci:"Sessão científica",post:"Discussão de pôster",ind:"Indústria",edex:"Education Exhibit"};
-const BNAME = {N:"North",S:"South",W:"West",E:"Lakeside",F:"fora do McCormick","?":"local a confirmar"};
+const DAYS = [["2026-11-29","Sun","Nov 29"],["2026-11-30","Mon","Nov 30"],["2026-12-01","Tue","Dec 1"],["2026-12-02","Wed","Dec 2"],["2026-12-03","Thu","Dec 3"]];
+const TAGS = {bc:["Body composition","var(--bc)"],pcct:["Photon-counting","var(--pcct)"],ai:["AI","var(--ai)"],msk:["MSK","var(--msk)"]};
+const FTAGS = {...TAGS, o:["Other topics","var(--muted)"]};
+const KIND = {aula:"Course",sci:"Scientific session",post:"Poster discussion",ind:"Industry",edex:"Education Exhibit"};
+const BNAME = {N:"North",S:"South",W:"West",E:"Lakeside",F:"outside McCormick","?":"location TBD"};
 const LIVE_ROLES = r=>r.role==="m"||r.role==="s"||(r.role==="a" && r.sess && r.sess.k==="sci");
 const WALK = {NS:8,SW:8,NW:12,EN:12,ES:12,EW:18};
 const S = Object.fromEntries(DATA.map(d=>[d.id,d]));
@@ -392,14 +392,14 @@ let META = null;        // monitor status
 let db = null, assets = null, online = false;
 const fol = {
   async toggle(key){ const id = fid(key); if(FOL[id]){ delete FOL[id]; render(); if(db){ try{ await db.doc("follow/"+id).delete(); }catch(e){} } else LS.set("rsna26p-fol", FOL); }
-    else { FOL[id] = {key, at:new Date().toISOString()}; render(); if(db){ try{ await db.doc("follow/"+id).set(FOL[id]); }catch(e){ toast("Não salvou: "+(e.code||"erro")); } } else LS.set("rsna26p-fol", FOL); } }
+    else { FOL[id] = {key, at:new Date().toISOString()}; render(); if(db){ try{ await db.doc("follow/"+id).set(FOL[id]); }catch(e){ toast("Not saved: "+(e.code||"erro")); } } else LS.set("rsna26p-fol", FOL); } }
 };
 const fid = key=>key.replace(/[^A-Za-z0-9_\-.~:@+]/g,"_").slice(0,190);
 const isFol = key=>!!FOL[fid(key)];
 const store = {
-  async put(id, data){ AG[id] = {...data}; render(); if(db){ try{ await db.doc("agenda/"+id).set(data); }catch(e){ toast("Não salvou: "+(e.code||"erro")); } } else LS.set("rsna26p-ag", AG); },
-  async patch(id, part){ AG[id] = {...(AG[id]||{}), ...part}; render(); if(db){ try{ await db.doc("agenda/"+id).update(part); }catch(e){ toast("Não salvou: "+(e.code||"erro")); } } else LS.set("rsna26p-ag", AG); },
-  async del(id){ delete AG[id]; render(); if(db){ try{ await db.doc("agenda/"+id).delete(); }catch(e){ toast("Não removeu: "+(e.code||"erro")); } } else LS.set("rsna26p-ag", AG); }
+  async put(id, data){ AG[id] = {...data}; render(); if(db){ try{ await db.doc("agenda/"+id).set(data); }catch(e){ toast("Not saved: "+(e.code||"erro")); } } else LS.set("rsna26p-ag", AG); },
+  async patch(id, part){ AG[id] = {...(AG[id]||{}), ...part}; render(); if(db){ try{ await db.doc("agenda/"+id).update(part); }catch(e){ toast("Not saved: "+(e.code||"erro")); } } else LS.set("rsna26p-ag", AG); },
+  async del(id){ delete AG[id]; render(); if(db){ try{ await db.doc("agenda/"+id).delete(); }catch(e){ toast("Not removed: "+(e.code||"erro")); } } else LS.set("rsna26p-ag", AG); }
 };
 
 /* ---------- resolving agenda docs into timed items ---------- */
@@ -424,8 +424,8 @@ function resolve(id){
   if(a.kind==="s"){ const s=S[a.sid]; if(!s) return null; return {id,a,d:s.d,s:s.s,u:s.u,t:s.t,c:s.c,r:s.r,b:s.b,l:s.l,sess:s}; }
   if(a.kind==="p"){ const s=S[a.sid]; if(!s) return null; const x=(s.x||[]).find(x=>x[0]===a.code); const sl=talkSlot(s,a.code);
     return {id,a,d:s.d,s:sl.s,u:sl.u,est:sl.est,t:a.title||(x?x[1]:a.code),c:a.code,r:s.r,b:s.b,l:s.l,sess:s,who:x?x[2]:""}; }
-  if(a.kind==="n"){ const D=DAYS.find(x=>x[0]===a.d); return {id,a,d:a.d,s:null,u:0,t:`Caderno do dia${D?" · "+D[1]+" "+D[2]:""}`,c:"",r:"",b:"?",l:0,loose:true}; }
-  if(a.kind==="k"){ return {id,a,d:a.d,s:null,u:0,t:a.name||"Pessoa sem nome",c:"",r:a.inst||"",b:"?",l:0,contact:true}; }
+  if(a.kind==="n"){ const D=DAYS.find(x=>x[0]===a.d); return {id,a,d:a.d,s:null,u:0,t:`Day notebook${D?" · "+D[1]+" "+D[2]:""}`,c:"",r:"",b:"?",l:0,loose:true}; }
+  if(a.kind==="k"){ return {id,a,d:a.d,s:null,u:0,t:a.name||"Unnamed person",c:"",r:a.inst||"",b:"?",l:0,contact:true}; }
   if(a.kind==="x"){ const x=XB[a.xid]||XOB[a.xid]; const cur=!!XB[a.xid]; const hall=cur?x[2]:"ver Floor Plan"; return {id,a,d:null,s:null,u:0,t:x?x[1]:a.xid,c:cur?x[3]:"",r:cur?`${hall} · estande ${x[3]}`:"estande: ver Floor Plan",b:cur?(hall.startsWith("South")?"S":"N"):"?",l:3,stand:true,x}; }
   if(a.kind==="e"){ const e=EXBY[a.code]; return {id,a,d:null,s:null,u:0,t:e?e[1]:a.code,c:a.code,r:"Learning Center (Lakeside, nível 3)",b:"E",l:3,who:e?e[2]:"",exh:true}; }
   if(a.kind==="c"){ const p = a.out ? {b:"F",l:0} : (place(a.place)||{b:"?",l:0}); return {id,a,d:a.d,s:toMin(a.start),u:Math.max(5,toMin(a.end)-toMin(a.start)),t:a.title,c:"",r:a.place||"",b:p.b,l:p.l}; }
@@ -439,13 +439,13 @@ function walk(a,b){
   return WALK[[a.b,b.b].sort().join("")] ?? 12;
 }
 function legInfo(a,b){
-  const gap = b.s-end(a), w = walk(a,b), est = (a.est||b.est)?" (horário estimado)":"";
-  if(gap<0) return {cls:"bad", msg:`Sobreposição de ${-gap} min entre ${a.c||a.t} e ${b.c||b.t}.`};
-  if(w===null){ const out=a.b==="F"||b.b==="F"; return {cls:out&&gap<30?"warn":"", msg: out?`Deslocamento fora do McCormick · intervalo de ${gap} min. Confira o trajeto no mapa.`:`Intervalo de ${gap} min.`}; }
-  if(gap<w && (a.est||b.est) && gap>=0 && w<=5) return {cls:"warn", msg:`Apertado: sala ao lado e intervalo de ${gap} min${est}. Saia logo no fim da fala.`};
-  if(gap<w) return {cls:"bad", msg:`Não dá tempo: ~${w} min a pé (${BNAME[a.b]} → ${BNAME[b.b]}) e o intervalo é de ${gap} min${est}.`};
-  if(gap<w+5 && w>=8) return {cls:"warn", msg:`Apertado: ~${w} min a pé (${BNAME[a.b]} → ${BNAME[b.b]}), intervalo de ${gap} min${est}.`};
-  return {cls:"", msg: w===0?`Mesma sala · intervalo de ${gap} min${est}.`:`~${w} min a pé${a.b!==b.b?` (${BNAME[a.b]} → ${BNAME[b.b]})`:""} · intervalo de ${gap} min${est}.`};
+  const gap = b.s-end(a), w = walk(a,b), est = (a.est||b.est)?" (estimated time)":"";
+  if(gap<0) return {cls:"bad", msg:`${-gap} min overlap between ${a.c||a.t} and ${b.c||b.t}.`};
+  if(w===null){ const out=a.b==="F"||b.b==="F"; return {cls:out&&gap<30?"warn":"", msg: out?`Off-site travel · ${gap} min gap. Check the route on a map.`:`${gap} min gap.`}; }
+  if(gap<w && (a.est||b.est) && gap>=0 && w<=5) return {cls:"warn", msg:`Tight: next-door room and a ${gap} min gap${est}. Leave right after the talk.`};
+  if(gap<w) return {cls:"bad", msg:`Not enough time: ~${w} min walk (${BNAME[a.b]} → ${BNAME[b.b]}) with a ${gap} min gap${est}.`};
+  if(gap<w+5 && w>=8) return {cls:"warn", msg:`Tight: ~${w} min walk (${BNAME[a.b]} → ${BNAME[b.b]}), ${gap} min gap${est}.`};
+  return {cls:"", msg: w===0?`Same room · ${gap} min gap${est}.`:`~${w} min walk${a.b!==b.b?` (${BNAME[a.b]} → ${BNAME[b.b]})`:""} · ${gap} min gap${est}.`};
 }
 /* group a day's items into blocks: single items, or clusters of overlapping items where he chooses on the spot */
 function dayModel(dk){
@@ -486,17 +486,17 @@ function matchTopics(d){ if(!myTopics.size) return true; const tp=d.tp||[]; if(!
 let offTopics = new Set();
 function whoChips(a){
   const out = [];
-  if(a.role==="apresento") out.push(`<span class="chip me">Eu apresento</span>`);
-  if(a.para==="fred") out.push(`<span class="chip fred">Para um colega</span>`);
-  if(a.by && a.by!=="Eu"){ out.push(`<span class="chip ${/fred/i.test(a.by)?"fred":/claude/i.test(a.by)?"sug":""}">${/claude/i.test(a.by)?"Sugestão":"Indicado por "+esc(a.by)}</span>`); }
-  if(a.media && a.media.length) out.push(`<span class="chip">${a.media.length} anexo${a.media.length>1?"s":""}</span>`);
+  if(a.role==="apresento") out.push(`<span class="chip me">I present</span>`);
+  if(a.para==="fred") out.push(`<span class="chip fred">For a colleague</span>`);
+  if(a.by && a.by!=="Eu"){ out.push(`<span class="chip ${/fred/i.test(a.by)?"fred":/claude/i.test(a.by)?"sug":""}">${/claude/i.test(a.by)?"Suggestion":"Recommended by "+esc(a.by)}</span>`); }
+  if(a.media && a.media.length) out.push(`<span class="chip">${a.media.length} attachment${a.media.length>1?"s":""}</span>`);
   return out.join("");
 }
 function itemCard(i, extra=""){
   const a = i.a, mine = a.role==="apresento";
   return `<button class="card${mine?" mine":""}${i.b==="F"?" out":""}" type="button" data-open="${i.id}">
     <h3>${esc(i.t)}</h3>
-    <div class="meta">${bld(i)}<span class="mono">${esc(i.r||"sem local")}</span>${i.c?`<span class="mono">${esc(i.c)}</span>`:""}${i.est?`<span class="chip est">~ horário estimado</span>`:""}</div>
+    <div class="meta">${bld(i)}<span class="mono">${esc(i.r||"no location")}</span>${i.c?`<span class="mono">${esc(i.c)}</span>`:""}${i.est?`<span class="chip est">~ estimated time</span>`:""}</div>
     ${whoChips(a)||a.sentAt?`<div class="meta">${whoChips(a)}${a.sentAt?`<span class="chip" style="color:var(--ok)">✓ enviado por e-mail</span>`:""}</div>`:""}
     ${a.note?`<div class="note">${esc(a.note)}</div>`:a.dica?`<div class="note" style="font-style:italic">${esc(a.dica)}</div>`:""}${extra}
   </button>`;
@@ -506,19 +506,19 @@ function renderDays(){
   $("#days").innerHTML = DAYS.map(([k,w,lab])=>{
     const m = dayModel(k), n = m.items.length;
     const dot = m.alerts?'<span class="dot"></span>':m.pending?'<span class="dot warn"></span>':"";
-    return `<button class="day" type="button" aria-pressed="${k===day}" data-day="${k}">${dot}<small>${w}</small><b>${lab.slice(0,2)}</b><small>${n||"–"}</small></button>`;
+    return `<button class="day" type="button" aria-pressed="${k===day}" data-day="${k}">${dot}<small>${w}</small><b>${k.slice(8,10)}</b><small>${n||"–"}</small></button>`;
   }).join("");
 }
 function renderDia(){
   const [k,w,lab] = DAYS.find(x=>x[0]===day);
   const m = dayModel(day);
   $("#diaTitle").textContent = `${w} ${lab}`;
-  $("#diaSum").textContent = m.items.length?`${m.items.length} compromisso${m.items.length>1?"s":""}`:"";
+  $("#diaSum").textContent = m.items.length?`${m.items.length} item${m.items.length>1?"s":""}`:"";
   const al = [];
-  if(m.pending) al.push(`<div class="leg warn" style="margin:0 0 10px">${m.pending} choque${m.pending>1?"s":""} de horário para decidir. Toque em <b>Vou</b> na opção que escolher.</div>`);
-  if(m.alerts) al.push(`<div class="leg bad" style="margin:0 0 10px">${m.alerts} alerta${m.alerts>1?"s":""} de deslocamento ou sobreposição.</div>`);
+  if(m.pending) al.push(`<div class="leg warn" style="margin:0 0 10px">${m.pending} time conflict${m.pending>1?"s":""} to decide. Tap <b>Going</b> on the one you choose.</div>`);
+  if(m.alerts) al.push(`<div class="leg bad" style="margin:0 0 10px">${m.alerts} walking or overlap alert${m.alerts>1?"s":""}.</div>`);
   $("#diaAlerts").innerHTML = al.join("");
-  if(!m.items.length){ $("#tl").innerHTML = `<div class="empty">Nada marcado neste dia.<br>Use <b>Adicionar do programa</b> ou crie um compromisso pessoal.</div>`; }
+  if(!m.items.length){ $("#tl").innerHTML = `<div class="empty">Nothing scheduled for this day.<br>Use <b>Add from program</b> or create a personal event.</div>`; }
   else {
     let h = "";
     for(const bl of m.blocks){
@@ -531,14 +531,14 @@ function renderDia(){
         const prev = m.line.filter(x=>end(x)<=st).pop();
         const firstChosenLeg = bl.items.map(i=>m.legs.get(i.id)).find(Boolean);
         if(firstChosenLeg) h += `<div class="leg ${firstChosenLeg.cls}">${firstChosenLeg.msg}</div>`;
-        h += `<div class="clash${bl.undecided||bl.overlapChosen?"":" done"}"><div class="clash-h">${bl.overlapChosen?"Duas escolhas se sobrepõem":bl.undecided?"Choque de horário · escolha na hora":"Choque resolvido"} · ${hm(st)}–${hm(bl.end)}</div>`;
+        h += `<div class="clash${bl.undecided||bl.overlapChosen?"":" done"}"><div class="clash-h">${bl.overlapChosen?"Two choices overlap":bl.undecided?"Time conflict · decide on the spot":"Conflict resolved"} · ${hm(st)}–${hm(bl.end)}</div>`;
         for(const i of bl.items){
           const pk = i.a.pick===true, sk = i.a.pick===false;
           const w = prev?walk(prev,i):null;
           const L = m.legs.get(i.id);
-          const hint = pk && L && L!==firstChosenLeg ? `<div class="leg ${L.cls}" style="margin:4px 0 0">${L.msg}</div>` : (!pk && prev && w!=null ? `<div class="note-s">~${w} min a pé desde ${esc(prev.r)}</div>` : "");
+          const hint = pk && L && L!==firstChosenLeg ? `<div class="leg ${L.cls}" style="margin:4px 0 0">${L.msg}</div>` : (!pk && prev && w!=null ? `<div class="note-s">~${w} min walk from ${esc(prev.r)}</div>` : "");
           h += `<div class="opt${sk?" skip":""}"><div style="min-width:0"><div class="meta mono" style="margin-bottom:3px">${hm(i.s)}–${hm(end(i))}</div>${itemCard(i,hint)}</div>
-            <button class="pick" type="button" data-pick="${i.id}" aria-pressed="${pk}">${pk?"✓ Vou":"Vou"}</button></div>`;
+            <button class="pick" type="button" data-pick="${i.id}" aria-pressed="${pk}">${pk?"✓ Going":"Going"}</button></div>`;
         }
         h += `</div>`;
       }
@@ -547,13 +547,13 @@ function renderDia(){
   }
   const col = colleaguesToday(day);
   $("#colBox").hidden = !col.length;
-  if(col.length){ $("#colSum").textContent = `Colegas ao vivo hoje (${col.length})`;
+  if(col.length){ $("#colSum").textContent = `Colleagues presenting live today (${col.length})`;
     $("#colList").innerHTML = col.map(({p,r})=>{ const on=!!AG[r.id]; return `<div class="crow">${avatar(p,32)}<div style="min-width:0"><span class="mono" style="font-size:12px">${esc(r.when.split(" · ")[1]||"")} · ${esc(r.r||"")}</span><br><b style="font-weight:600">${esc(p[1])}</b> <span class="muted">${ROLE[r.role]}</span>: ${esc(r.t)}</div>${r.kind==="p"?`<button class="add" type="button" data-talk="${esc(r.code)}" data-sid="${r.sid}">${on?"✓":"+"}</button>`:`<button class="add" type="button" data-add="${r.sid}">${on?"✓":"+"}</button>`}</div>`; }).join(""); }
   const soc = DATA.filter(d=>d.so && d.d===day);
-  $("#socBox").hidden = !soc.length; if(soc.length){ $("#socSum").textContent = `Social e entretenimento hoje (${soc.length})`; $("#socList").innerHTML = socialHtml(soc); }
+  $("#socBox").hidden = !soc.length; if(soc.length){ $("#socSum").textContent = `Social and entertainment today (${soc.length})`; $("#socList").innerHTML = socialHtml(soc); }
   renderSendBanner(); renderFechamento(); renderAgora();
   const ex = Object.keys(AG).map(resolve).filter(i=>i && (i.exh || ((i.loose||i.contact) && i.d===day)));
-  $("#noTime").innerHTML = ex.length ? `<h3 style="font-size:16px;margin:22px 0 4px">Caderno, pessoas e itens sem horário (${ex.length})</h3><p class="note-s" style="margin:0 0 8px">Anotações soltas e pessoas que você conheceu hoje, além dos Education Exhibits (Learning Center, Lakeside nível 3).</p>` + ex.map(i=>itemCard(i)).join("") : "";
+  $("#noTime").innerHTML = ex.length ? `<h3 style="font-size:16px;margin:22px 0 4px">Notebook, people and unscheduled items (${ex.length})</h3><p class="note-s" style="margin:0 0 8px">Loose notes and people you met today, plus Education Exhibits (Learning Center, Lakeside level 3).</p>` + ex.map(i=>itemCard(i)).join("") : "";
   ["N","S","W","E"].forEach(b=>{ const g=document.getElementById("m"+b); if(g) g.style.opacity = m.items.length && !m.items.some(d=>d.b===b) ? .35 : 1; });
 }
 function inAgenda(sid){ return !!AG["s"+sid]; }
@@ -563,7 +563,7 @@ function renderProg(){
   if(k==="edex"){ renderExhibits(q); return; }
   const rows = DATA.filter(d=>d.d===day && (k==="so" ? d.so : ((!k||d.k===k) && matchTopics(d))) &&
     (!q || (d.t+" "+d.c+" "+d.r+" "+d.m+" "+d.x.map(x=>x[0]+" "+x[1]+" "+x[2]).join(" ")).toLowerCase().includes(q)));
-  $("#count").textContent = `${rows.length} sessões neste dia`;
+  $("#count").textContent = `${rows.length} sessions on this day`;
   let h="", slot=-1;
   for(const d of rows){
     if(d.s!==slot){ slot=d.s; h+=`<div class="slot">${hm(d.s)}</div>`; }
@@ -572,21 +572,21 @@ function renderProg(){
       <div class="meta"><span class="mono">${hm(d.s)}–${hm(d.s+d.u)}</span>${bld(d)}<span class="mono">${esc(d.r)}</span></div>
       <h3>${esc(d.t)}</h3>
       <div class="meta"><span class="mono">${esc(d.c)}</span><span>${d.so?"Social":KIND[d.k]}</span>${topicPills(d)}${nt?`<span class="chip sug">${nt} fala${nt>1?"s":""} na agenda</span>`:""}</div>
-    </button><button class="add" type="button" data-add="${d.id}" aria-label="${on?"Remover da agenda":"Adicionar à agenda"}">${on?"✓":"+"}</button></div>`;
+    </button><button class="add" type="button" data-add="${d.id}" aria-label="${on?"Remove from schedule":"Add to schedule"}">${on?"✓":"+"}</button></div>`;
   }
-  $("#list").innerHTML = h || `<div class="empty">Nada com esses filtros neste dia.</div>`;
+  $("#list").innerHTML = h || `<div class="empty">Nothing matches these filters on this day.</div>`;
 }
 function renderChips(){
-  $("#tagChips").innerHTML = [...myTopics].map(t=>`<button class="fchip" type="button" aria-pressed="${!offTopics.has(t)}" data-topic="${t}">${esc(TSHORT(t))}</button>`).join("") + `<button class="fchip" type="button" aria-pressed="${tagOn.has("o")}" data-tag="o">Sem especialidade (indústria, social)</button>`;
+  $("#tagChips").innerHTML = [...myTopics].map(t=>`<button class="fchip" type="button" aria-pressed="${!offTopics.has(t)}" data-topic="${t}">${esc(TSHORT(t))}</button>`).join("") + `<button class="fchip" type="button" aria-pressed="${tagOn.has("o")}" data-tag="o">No subspecialty (industry, social)</button>`;
 }
 function openTopics(){
   openId=null; openPerson=null;
-  openSheet(`<button class="close" type="button" data-close aria-label="Fechar">×</button><div class="grab"></div>
-    <h2 id="sheetTitle">Suas especialidades</h2>
-    <p class="note-s" style="margin:0">Escolha as áreas que você quer ver no Programa. Dá para mudar depois em Programa › Especialidades.</p>
-    <p class="note-s" style="margin:0">Guia não oficial, sem vínculo com o RSNA, feito só com informações públicas do evento.</p>
+  openSheet(`<button class="close" type="button" data-close aria-label="Close">×</button><div class="grab"></div>
+    <h2 id="sheetTitle">Your subspecialties</h2>
+    <p class="note-s" style="margin:0">Choose the areas you want to see in the Program. You can change them later in Program › Subspecialties.</p>
+    <p class="note-s" style="margin:0">Unofficial guide, not affiliated with RSNA, built only from public event information.</p>
     <div class="qchips" id="topicPick">${TOPICS.map((t,ix)=>`<button class="qchip" type="button" data-tp="${ix}" aria-pressed="${myTopics.has(ix)}">${esc(t)}</button>`).join("")}</div>
-    <button class="btn primary" type="button" id="saveTopics">Salvar</button>`);
+    <button class="btn primary" type="button" id="saveTopics">Save</button>`);
 }
 function renderAvisos(){
   const seen = LS.get("rsna26p-seen", "");
@@ -604,7 +604,7 @@ function renderAvisos(){
   $("#fredSum").textContent = `Lista do Fred (${fred.length})`;
   $("#fredList").innerHTML = fred.length ? fred.map(i=>{ const D=DAYS.find(x=>x[0]===i.d); return `<div style="padding:6px 0;border-bottom:1px solid var(--line);font-size:14px"><span class="mono">${D?D[1]+" "+D[2]:i.d} ${hm(i.s)} · ${esc(i.r)}</span><br>${esc(i.t)} <span class="chip ${i.a.para==="fred"?"fred":""}">${i.a.para==="fred"?"ver pro Fred":"indicado pra mim"}</span></div>`; }).join("") : `<div class="muted">Nada marcado como pedido do Fred.</div>`;
 }
-function fmtWhen(iso){ try{ const d=new Date(iso); return d.toLocaleString("pt-BR",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit",timeZone:"America/Chicago"})+" (Chicago)"; }catch(e){ return iso; } }
+function fmtWhen(iso){ try{ const d=new Date(iso); return d.toLocaleString("en-US",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit",timeZone:"America/Chicago"})+" (Chicago)"; }catch(e){ return iso; } }
 function render(){ renderDays(); if(view==="dia") renderDia(); if(view==="prog") renderProg(); if(view==="pessoas") renderPessoas(); if(view==="estandes") renderEstandes(); renderAvisos(); }
 
 /* ---------- sheet: item detail ---------- */
@@ -612,80 +612,80 @@ let sheetBusy = false, noteTimer = null, openPerson = null;
 function openSheet(html){ $("#sheetIn").innerHTML = html; $("#sheet").hidden=false; $("#scrim").hidden=false; $("#fab").hidden=true; document.body.style.overflow="hidden"; }
 function closeSheet(){ $("#sheet").hidden=true; $("#scrim").hidden=true; $("#fab").hidden=false; document.body.style.overflow=""; openId=null; openSess=null; openPerson=null; flushNote(); }
 function flushNote(){ if(noteTimer){ clearTimeout(noteTimer); noteTimer=null; const ta=$("#noteTa"); if(ta && ta.dataset.id && AG[ta.dataset.id]) store.patch(ta.dataset.id,{note:ta.value}); const pt=$("#plaudTa"); if(pt && pt.dataset.id && AG[pt.dataset.id]) store.patch(pt.dataset.id,{plaud:pt.value}); const lt=$("#linksTa"); if(lt && lt.dataset.id && AG[lt.dataset.id]) store.patch(lt.dataset.id,{links:lt.value}); const ct=$("#contactsTa"); if(ct && ct.dataset.id && AG[ct.dataset.id]) store.patch(ct.dataset.id,{contacts:ct.value}); const bt=$("#byTxt"); if(bt && openId && AG[openId] && document.activeElement===bt) store.patch(openId,{by:bt.value.trim()}); } }
-const BY_OPTS = ["Eu","Colega","Chefe"];
+const BY_OPTS = ["Me","Colleague","Mentor"];
 function mediaHtml(a){
   return (a.media||[]).map((m,ix)=>{ const u="/_blob/"+m.id;
-    if(m.k==="img") return `<div class="mi"><img data-mid="${m.id}" alt="${esc(m.name||"foto")}"><button class="del" type="button" data-delm="${ix}" aria-label="Apagar">×</button></div>`;
-    if(m.k==="vid") return `<div class="mi"><video data-mid="${m.id}" controls playsinline preload="metadata"></video><button class="del" type="button" data-delm="${ix}" aria-label="Apagar">×</button></div>`;
-    return `<div class="mi aud"><span class="note-s">${esc(m.name||"áudio")}</span><audio data-mid="${m.id}" controls preload="none"></audio><button class="del" type="button" data-delm="${ix}">Apagar áudio</button></div>`; }).join("");
+    if(m.k==="img") return `<div class="mi"><img data-mid="${m.id}" alt="${esc(m.name||"foto")}"><button class="del" type="button" data-delm="${ix}" aria-label="Delete">×</button></div>`;
+    if(m.k==="vid") return `<div class="mi"><video data-mid="${m.id}" controls playsinline preload="metadata"></video><button class="del" type="button" data-delm="${ix}" aria-label="Delete">×</button></div>`;
+    return `<div class="mi aud"><span class="note-s">${esc(m.name||"audio")}</span><audio data-mid="${m.id}" controls preload="none"></audio><button class="del" type="button" data-delm="${ix}">Delete audio</button></div>`; }).join("");
 }
 function captureBar(id){
   return `<div class="capbar">
-    <button class="cap" type="button" data-qa="foto" data-id="${id}"><b>📷</b>Foto</button>
-    <button class="cap" type="button" data-qa="video" data-id="${id}"><b>🎥</b>Vídeo</button>
-    <button class="cap" type="button" data-qa="marca" data-id="${id}"><b>⏱</b>Marcar</button>
-    <button class="cap" type="button" data-qa="galeria" data-id="${id}"><b>🖼</b>Galeria</button>
+    <button class="cap" type="button" data-qa="foto" data-id="${id}"><b>📷</b>Photo</button>
+    <button class="cap" type="button" data-qa="video" data-id="${id}"><b>🎥</b>Video</button>
+    <button class="cap" type="button" data-qa="marca" data-id="${id}"><b>⏱</b>Mark</button>
+    <button class="cap" type="button" data-qa="galeria" data-id="${id}"><b>🖼</b>Gallery</button>
   </div>`;
 }
 function renderSheet(){
   const i = resolve(openId); if(!i){ closeSheet(); return; }
   const a = i.a, D = DAYS.find(x=>x[0]===i.d);
   const custom = a.kind==="c";
-  const mapLink = custom && a.place ? `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(a.place+(a.out?" Chicago":" McCormick Place Chicago"))}" target="_blank" rel="noopener">Abrir no mapa</a>` : "";
+  const mapLink = custom && a.place ? `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(a.place+(a.out?" Chicago":" McCormick Place Chicago"))}" target="_blank" rel="noopener">Open in Maps</a>` : "";
   const sess = i.sess;
-  const when = i.contact ? `Pessoa que conheci · ${D?D[1]+" "+D[2]:""}` : i.loose ? `Caderno do dia · ${D?D[1]+" "+D[2]:""}` : i.stand ? `Estande${i.x&&i.x[4]?" · "+esc(i.x[4]):""}` : i.exh ? "Sem horário · Education Exhibit" : `${D?D[1]+" "+D[2]:""} · ${hm(i.s)}–${hm(end(i))}${i.est?" (estimado)":""}`;
+  const when = i.contact ? `Person I met · ${D?D[1]+" "+D[2]:""}` : i.loose ? `Day notebook · ${D?D[1]+" "+D[2]:""}` : i.stand ? `Booth${i.x&&i.x[4]?" · "+esc(i.x[4]):""}` : i.exh ? "Unscheduled · Education Exhibit" : `${D?D[1]+" "+D[2]:""} · ${hm(i.s)}–${hm(end(i))}${i.est?" (estimated)":""}`;
   const recN = (a.rec||[]).length;
-  const html = `<button class="close" type="button" data-close aria-label="Fechar">×</button><div class="grab"></div>
+  const html = `<button class="close" type="button" data-close aria-label="Close">×</button><div class="grab"></div>
     <div><div class="meta mono">${when}</div>
     <h2 id="sheetTitle" style="margin-top:4px">${esc(i.t)}</h2>
-    ${i.contact||i.loose?"":`<div class="meta" style="margin-top:6px">${bld(i)}<span class="mono">${esc(i.r||"sem local")}</span>${i.c?`<span class="mono">${esc(i.c)}</span>`:""}${mapLink}</div>`}
-    ${i.who?`<div class="note-s" style="margin-top:4px">Apresenta: ${esc(i.who)}</div>`:""}
-    ${a.dica?`<p class="note-s" style="margin:4px 0 0;font-style:italic">Dica: ${esc(a.dica)}</p>`:""}</div>
-    ${i.contact?`<div class="frow"><div class="fld"><label for="kName">Nome</label><input type="text" id="kName" value="${esc(a.name||"")}" autocomplete="off"></div><div class="fld"><label for="kInst">Instituição / empresa</label><input type="text" id="kInst" value="${esc(a.inst||"")}" autocomplete="off"></div></div>
-      <div class="fld"><label for="contactsTa">Contato</label><textarea id="contactsTa" data-id="${i.id}" style="min-height:56px" placeholder="E-mail, LinkedIn, WhatsApp">${esc(a.contacts||"")}</textarea></div>`:""}
-    ${i.stand?`<div class="qchips"><button class="qchip" type="button" data-xvis="${esc(a.xid)}" aria-pressed="${!!a.visited}">${a.visited?"✓ Visitado":"Marcar como visitado"}</button></div>`:""}
+    ${i.contact||i.loose?"":`<div class="meta" style="margin-top:6px">${bld(i)}<span class="mono">${esc(i.r||"no location")}</span>${i.c?`<span class="mono">${esc(i.c)}</span>`:""}${mapLink}</div>`}
+    ${i.who?`<div class="note-s" style="margin-top:4px">Presenter: ${esc(i.who)}</div>`:""}
+    ${a.dica?`<p class="note-s" style="margin:4px 0 0;font-style:italic">Tip: ${esc(a.dica)}</p>`:""}</div>
+    ${i.contact?`<div class="frow"><div class="fld"><label for="kName">Name</label><input type="text" id="kName" value="${esc(a.name||"")}" autocomplete="off"></div><div class="fld"><label for="kInst">Institution / company</label><input type="text" id="kInst" value="${esc(a.inst||"")}" autocomplete="off"></div></div>
+      <div class="fld"><label for="contactsTa">Contact</label><textarea id="contactsTa" data-id="${i.id}" style="min-height:56px" placeholder="Email, LinkedIn, WhatsApp">${esc(a.contacts||"")}</textarea></div>`:""}
+    ${i.stand?`<div class="qchips"><button class="qchip" type="button" data-xvis="${esc(a.xid)}" aria-pressed="${!!a.visited}">${a.visited?"✓ Visited":"Mark as visited"}</button></div>`:""}
     ${assets?captureBar(i.id):""}
-    <div class="fld"><label for="noteTa">${i.contact?"Sobre o que conversamos":"Anotações"}</label><textarea id="noteTa" data-id="${i.id}" placeholder="${i.contact?"Assunto, ideias, próximo passo":"Cada Enter abre uma linha com a hora"}">${esc(a.note||"")}</textarea>
-      <div class="mailbar"><span class="note-s" id="noteState" style="flex:1">Salva sozinho.</span>${i.loose||i.contact?"":`<button class="btn ghost" type="button" data-rec="${i.id}" style="min-height:34px;padding:4px 10px;font-size:13px">${recN?`Gravação ${recN} desde ${esc(new Date(a.rec[recN-1].at).toLocaleTimeString("pt-BR",{hour:"2-digit",minute:"2-digit",timeZone:"America/Chicago"}))} · nova`:"Comecei a gravar"}</button>`}</div></div>
-    ${assets?`<div class="media" id="mediaGrid">${mediaHtml(a)}</div><span class="note-s" id="upState"></span>`:`<span class="note-s">Fotos e vídeos funcionam na versão online, logado no claude.ai.</span>`}
-    ${i.stand?`<div class="fld"><label for="contactsTa">Pessoas que conheci no estande</label><textarea id="contactsTa" data-id="${i.id}" style="min-height:70px" placeholder="Nome, cargo, contato, assunto">${esc(a.contacts||"")}</textarea></div>${i.x&&i.x[5]?`<p class="note-s" style="margin:0">${esc(i.x[5])}</p>`:""}`:""}
-    ${i.stand||i.contact||i.loose?"":`<div class="fld"><label for="plaudTa">Gravação externa: resumo e link</label><textarea id="plaudTa" data-id="${i.id}" style="min-height:70px" placeholder="Resumo e link do Plaud, Gravador etc.">${esc(a.plaud||"")}</textarea></div>`}
-    <details class="box"><summary>Mais opções</summary><div style="display:flex;flex-direction:column;gap:14px;margin-top:10px">
-      ${custom?`<div class="fld"><label for="cTitle">Título</label><input type="text" id="cTitle" value="${esc(a.title)}"></div>
-        <div class="frow"><div class="fld"><label for="cStart">Início</label><input type="time" id="cStart" value="${esc(a.start)}"></div><div class="fld"><label for="cEnd">Fim</label><input type="time" id="cEnd" value="${esc(a.end)}"></div></div>
-        <div class="fld"><label for="cPlace">Local</label><input type="text" id="cPlace" value="${esc(a.place||"")}" placeholder="Sala (ex.: S403A) ou endereço"></div>
-        ${a.route?`<button class="btn primary" type="button" data-route="${esc(a.route)}">Abrir a rota desta volta nos Estandes</button>`:""}`:""}
-      ${i.contact||i.loose?"":`<div class="fld"><span class="lab">Indicado por</span><div class="qchips">${BY_OPTS.map(o=>`<button class="qchip" type="button" data-by="${esc(o)}" aria-pressed="${a.by===o}">${esc(o)}</button>`).join("")}</div>
-        <input type="text" id="byTxt" placeholder="Outra pessoa" value="${BY_OPTS.includes(a.by)?"":esc(a.by||"")}"></div>
-      <div class="fld"><span class="lab">Para quem</span><div class="qchips">
-        <button class="qchip" type="button" data-para="eu" aria-pressed="${a.para!=="fred"}">Pra mim</button>
-        <button class="qchip" type="button" data-para="fred" aria-pressed="${a.para==="fred"}">Ver para um colega</button>
-        <button class="qchip" type="button" data-role aria-pressed="${a.role==="apresento"}">Eu apresento</button></div></div>`}
-      ${assets?`<div class="fld"><span class="lab">Anexar arquivo</span><div class="upl"><label>Foto<input type="file" accept="image/*" data-up="img" multiple></label><label>Vídeo<input type="file" accept="video/*" data-up="vid"></label><label>Áudio<input type="file" accept="audio/*,.m4a" data-up="aud"></label></div><span class="note-s">Até 20 MB. Áudio: .m4a do Gravador.</span></div>`:""}
-      <div class="fld"><label for="linksTa">Links de vídeos ou áudios grandes</label><textarea id="linksTa" data-id="${i.id}" style="min-height:56px" placeholder="Link do iCloud Fotos ou do Google Drive">${esc(a.links||"")}</textarea></div>
-      ${sess && a.kind==="s" && sess.x.length?`<div class="fld"><span class="lab">Falas nesta sessão (${sess.xn})</span>${talksHtml(sess)}</div>`:""}
-      ${sess && a.kind==="p"?`<p class="note-s" style="margin:0">Dentro de ${esc(sess.c)} · ${esc(sess.t)} (${hm(sess.s)}–${hm(sess.s+sess.u)})</p>`:""}
+    <div class="fld"><label for="noteTa">${i.contact?"What we talked about":"Notes"}</label><textarea id="noteTa" data-id="${i.id}" placeholder="${i.contact?"Topic, ideas, next step":"Each Enter starts a time-stamped line"}">${esc(a.note||"")}</textarea>
+      <div class="mailbar"><span class="note-s" id="noteState" style="flex:1">Saves automatically.</span>${i.loose||i.contact?"":`<button class="btn ghost" type="button" data-rec="${i.id}" style="min-height:34px;padding:4px 10px;font-size:13px">${recN?`Recording ${recN} since ${esc(new Date(a.rec[recN-1].at).toLocaleTimeString("en-US",{hour:"2-digit",minute:"2-digit",timeZone:"America/Chicago"}))} · new`:"I started recording"}</button>`}</div></div>
+    ${assets?`<div class="media" id="mediaGrid">${mediaHtml(a)}</div><span class="note-s" id="upState"></span>`:`<span class="note-s"></span>`}
+    ${i.stand?`<div class="fld"><label for="contactsTa">People I met at the booth</label><textarea id="contactsTa" data-id="${i.id}" style="min-height:70px" placeholder="Name, role, contact, topic">${esc(a.contacts||"")}</textarea></div>${i.x&&i.x[5]?`<p class="note-s" style="margin:0">${esc(i.x[5])}</p>`:""}`:""}
+    ${i.stand||i.contact||i.loose?"":`<div class="fld"><label for="plaudTa">External recording: summary and link</label><textarea id="plaudTa" data-id="${i.id}" style="min-height:70px" placeholder="Summary and link from Plaud, Voice Memos, etc.">${esc(a.plaud||"")}</textarea></div>`}
+    <details class="box"><summary>More options</summary><div style="display:flex;flex-direction:column;gap:14px;margin-top:10px">
+      ${custom?`<div class="fld"><label for="cTitle">Title</label><input type="text" id="cTitle" value="${esc(a.title)}"></div>
+        <div class="frow"><div class="fld"><label for="cStart">Start</label><input type="time" id="cStart" value="${esc(a.start)}"></div><div class="fld"><label for="cEnd">End</label><input type="time" id="cEnd" value="${esc(a.end)}"></div></div>
+        <div class="fld"><label for="cPlace">Location</label><input type="text" id="cPlace" value="${esc(a.place||"")}" placeholder="Room (e.g., S403A) or address"></div>
+        ${a.route?`<button class="btn primary" type="button" data-route="${esc(a.route)}">Open this route in Booths</button>`:""}`:""}
+      ${i.contact||i.loose?"":`<div class="fld"><span class="lab">Recommended by</span><div class="qchips">${BY_OPTS.map(o=>`<button class="qchip" type="button" data-by="${esc(o)}" aria-pressed="${a.by===o}">${esc(o)}</button>`).join("")}</div>
+        <input type="text" id="byTxt" placeholder="Someone else" value="${BY_OPTS.includes(a.by)?"":esc(a.by||"")}"></div>
+      <div class="fld"><span class="lab">For whom</span><div class="qchips">
+        <button class="qchip" type="button" data-para="eu" aria-pressed="${a.para!=="fred"}">For me</button>
+        <button class="qchip" type="button" data-para="fred" aria-pressed="${a.para==="fred"}">For a colleague</button>
+        <button class="qchip" type="button" data-role aria-pressed="${a.role==="apresento"}">I present</button></div></div>`}
+      ${assets?`<div class="fld"><span class="lab">Attach file</span><div class="upl"><label>Photo<input type="file" accept="image/*" data-up="img" multiple></label><label>Video<input type="file" accept="video/*" data-up="vid"></label><label>Audio<input type="file" accept="audio/*,.m4a" data-up="aud"></label></div><span class="note-s">Up to 80 MB. Audio: .m4a from Voice Memos.</span></div>`:""}
+      <div class="fld"><label for="linksTa">Links to large videos or audio</label><textarea id="linksTa" data-id="${i.id}" style="min-height:56px" placeholder="iCloud Photos or Google Drive link">${esc(a.links||"")}</textarea></div>
+      ${sess && a.kind==="s" && sess.x.length?`<div class="fld"><span class="lab">Talks in this session (${sess.xn})</span>${talksHtml(sess)}</div>`:""}
+      ${sess && a.kind==="p"?`<p class="note-s" style="margin:0">Part of ${esc(sess.c)} · ${esc(sess.t)} (${hm(sess.s)}–${hm(sess.s+sess.u)})</p>`:""}
       ${sess && sess.ds?`<p class="note-s" style="margin:0">${esc(sess.ds)}</p>`:""}
-      <div class="fld"><span class="lab">Compartilhar</span><div class="mailbar"><button class="btn" type="button" data-mail="${i.id}">Compartilhar anotações e fotos</button>${a.sentAt?`<span class="sent">Compartilhado ${esc(fmtWhen(a.sentAt))}</span>`:""}</div><span class="note-s" id="mailState">Abre o menu do celular: Mail, Notas, WhatsApp, AirDrop.</span></div>
-      <div id="rmZone"><button class="btn danger" type="button" data-rm>${i.stand?"Tirar da rota":i.contact?"Apagar contato":"Tirar da agenda"}</button></div>
+      <div class="fld"><span class="lab">Share</span><div class="mailbar"><button class="btn" type="button" data-mail="${i.id}">Share notes and photos</button>${a.sentAt?`<span class="sent">Shared ${esc(fmtWhen(a.sentAt))}</span>`:""}</div><span class="note-s" id="mailState">Opens your phone share menu: Mail, Notes, WhatsApp, AirDrop.</span></div>
+      <div id="rmZone"><button class="btn danger" type="button" data-rm>${i.stand?"Remove from route":i.contact?"Delete contact":"Remove from schedule"}</button></div>
     </div></details>`;
   openSheet(html); if(assets) showPending(i.id);
 }
 function talksHtml(sess){
   return `<ul class="talks">${sess.x.map(x=>{ const on=talkIn(x[0]); const sl=talkSlot(sess,x[0]);
     return `<li class="talk${on?" on":""}"><div style="min-width:0"><span class="mono" style="font-size:12px">${esc(x[0])} · ~${hm(sl.s)}</span><br>${esc(x[1])}<small>${esc(x[2])}</small></div>
-      <button class="add" type="button" data-talk="${esc(x[0])}" data-sid="${sess.id}">${on?"✓ Na agenda":"+ Só esta"}</button></li>`; }).join("")}</ul>`;
+      <button class="add" type="button" data-talk="${esc(x[0])}" data-sid="${sess.id}">${on?"✓ Scheduled":"+ This talk only"}</button></li>`; }).join("")}</ul>`;
 }
 function openSessionPreview(sid){
   const d = S[sid]; if(!d) return; openSess = sid;
   if(inAgenda(sid)){ openId = "s"+sid; renderSheet(); return; }
-  openSheet(`<button class="close" type="button" data-close aria-label="Fechar">×</button><div class="grab"></div>
+  openSheet(`<button class="close" type="button" data-close aria-label="Close">×</button><div class="grab"></div>
     <div><div class="meta mono">${hm(d.s)}–${hm(d.s+d.u)} · ${KIND[d.k]}</div><h2 id="sheetTitle" style="margin-top:4px">${esc(d.t)}</h2>
     <div class="meta" style="margin-top:6px">${bld(d)}<span class="mono">${esc(d.r)}</span><span class="mono">${esc(d.c)}</span>${tagPills(d.g)}</div>
-    ${d.m?`<div class="note-s" style="margin-top:6px">Moderação: ${esc(d.m)}</div>`:""}</div>
-    <button class="btn primary" type="button" data-add="${d.id}">+ Sessão inteira na agenda</button>
+    ${d.m?`<div class="note-s" style="margin-top:6px">Moderators: ${esc(d.m)}</div>`:""}</div>
+    <button class="btn primary" type="button" data-add="${d.id}">+ Whole session to schedule</button>
     ${d.ds?`<p class="note-s" style="margin:0">${esc(d.ds)}</p>`:""}
-    ${d.x.length?`<div class="fld"><span class="lab">${d.k==="aula"||d.k==="ind"?"Palestrantes":"Falas nos seus temas"} (${d.xn})</span>${talksHtml(d)}</div>`:""}`);
+    ${d.x.length?`<div class="fld"><span class="lab">${d.k==="aula"||d.k==="ind"?"Speakers":"Talks in your topics"} (${d.xn})</span>${talksHtml(d)}</div>`:""}`);
 }
 
 
@@ -698,10 +698,10 @@ function avatar(p, size=40){
   let h=0; for(const ch of p[0]) h=(h*31+ch.charCodeAt(0))%360;
   return `<span class="avt ini" style="width:${size}px;height:${size}px;font-size:${Math.round(size*.38)}px;--hue:${h}" aria-hidden="true">${esc(t.toUpperCase())}</span>`;
 }
-const ROLE = {a:"apresenta",c:"coautor",m:"modera",s:"palestra"};
+const ROLE = {a:"presents",c:"co-author",m:"moderates",s:"speaks"};
 function refInfo(ref){
   const [sid, code, role] = ref.split("|");
-  if(sid==="e"){ const e=EXBY[code]; return e?{kind:"e", code, role, t:e[1], when:"Education Exhibit · sem horário", r:"Learning Center", sort:"9", id:"e"+code}:null; }
+  if(sid==="e"){ const e=EXBY[code]; return e?{kind:"e", code, role, t:e[1], when:"Education Exhibit · unscheduled", r:"Learning Center", sort:"9", id:"e"+code}:null; }
   const s=S[sid]; if(!s) return null;
   const D=DAYS.find(x=>x[0]===s.d);
   if(code){ const x=s.x.find(x=>x[0]===code); const sl=talkSlot(s,code);
@@ -712,35 +712,35 @@ const LIVEC = {};
 function liveCount(p){ if(LIVEC[p[0]]==null){ let n=0; for(const r of p[4]){ const [sid,code,role]=r.split("|"); if(role==="m"||role==="s"||(role==="a" && S[sid] && S[sid].k==="sci")) n++; } LIVEC[p[0]]=n; } return LIVEC[p[0]]; }
 function personRow(p){
   const n = p[4].length, f = isFol(p[0]), lv = liveCount(p);
-  return `<div class="prow"><button class="pbtn" type="button" data-person="${esc(p[0])}">${avatar(p)}<span style="min-width:0"><b>${esc(p[1])}</b><small>${esc(p[2]||"instituição não informada")} · ${lv?`<b style="display:inline;color:var(--ok)">${lv} ao vivo</b>`:"nada ao vivo"}${n-lv?` · ${n-lv} trabalho${n-lv>1?"s":""}`:""}</small></span></button>
-    <button class="star" type="button" data-fol="${esc(p[0])}" aria-pressed="${f}" aria-label="${f?"Deixar de seguir":"Seguir"} ${esc(p[1])}">${f?"★":"☆"}</button></div>`;
+  return `<div class="prow"><button class="pbtn" type="button" data-person="${esc(p[0])}">${avatar(p)}<span style="min-width:0"><b>${esc(p[1])}</b><small>${esc(p[2]||"institution not listed")} · ${lv?`<b style="display:inline;color:var(--ok)">${lv} live</b>`:"nothing live"}${n-lv?` · ${n-lv} paper${n-lv>1?"s":""}`:""}</small></span></button>
+    <button class="star" type="button" data-fol="${esc(p[0])}" aria-pressed="${f}" aria-label="${f?"Unfollow":"Follow"} ${esc(p[1])}">${f?"★":"☆"}</button></div>`;
 }
 function renderPessoas(){
   const q = ($("#pq").value||"").trim().toLowerCase();
   const fl = PEOPLE.filter(p=>isFol(p[0]));
-  $("#folList").innerHTML = fl.length ? fl.map(personRow).join("") : `<div class="empty">Ninguém seguido ainda. Busque um nome ou instituição e toque na estrela.</div>`;
+  $("#folList").innerHTML = fl.length ? fl.map(personRow).join("") : `<div class="empty">No one followed yet. Search a name or institution and tap the star.</div>`;
   $("#folCount").textContent = fl.length ? `(${fl.length})` : "";
-  if(q.length<2){ $("#pRes").innerHTML = `<div class="muted" style="font-size:13px">Digite pelo menos 2 letras: nome, sobrenome ou instituição (ex.: Einstein, Mayo, São Paulo).</div>`; return; }
+  if(q.length<2){ $("#pRes").innerHTML = `<div class="muted" style="font-size:13px">Type at least 2 letters: first name, last name or institution (e.g., Mayo, Stanford, São Paulo).</div>`; return; }
   const nq = q.normalize("NFKD").replace(/[̀-ͯ]/g,"");
   const onlyLive = $("#liveOnly").getAttribute("aria-pressed")==="true";
   const res = PEOPLE.filter(p=>(p[0]+" "+(p[5]||"")+" "+p[1].toLowerCase()+" "+(p[2]||"").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g,"")).includes(nq) && (!onlyLive || liveCount(p)>0)).sort((a,b)=>liveCount(b)-liveCount(a));
-  $("#pRes").innerHTML = `<div class="muted" style="font-size:13px;margin-bottom:6px">${res.length} pessoa${res.length===1?"":"s"}${res.length>80?" · mostrando 80":""}</div>` + res.slice(0,80).map(personRow).join("");
+  $("#pRes").innerHTML = `<div class="muted" style="font-size:13px;margin-bottom:6px">${res.length} ${res.length===1?"person":"people"}${res.length>80?" · showing 80":""}</div>` + res.slice(0,80).map(personRow).join("");
 }
 function openPersonSheet(key){
   const p = PBY[key]; if(!p) return; openPerson = key; openId = null;
   const refs = p[4].map(refInfo).filter(Boolean).sort((a,b)=>a.sort.localeCompare(b.sort));
   const f = isFol(key);
-  openSheet(`<button class="close" type="button" data-close aria-label="Fechar">×</button><div class="grab"></div>
-    <div class="phead">${avatar(p,72)}<div style="min-width:0"><h2 id="sheetTitle">${esc(p[1])}</h2><div class="muted" style="font-size:14px">${esc(p[2]||"instituição não informada")}</div></div></div>
-    <button class="btn ${f?"":"primary"}" type="button" data-fol="${esc(key)}">${f?"★ Seguindo":"☆ Seguir"}</button>
+  openSheet(`<button class="close" type="button" data-close aria-label="Close">×</button><div class="grab"></div>
+    <div class="phead">${avatar(p,72)}<div style="min-width:0"><h2 id="sheetTitle">${esc(p[1])}</h2><div class="muted" style="font-size:14px">${esc(p[2]||"institution not listed")}</div></div></div>
+    <button class="btn ${f?"":"primary"}" type="button" data-fol="${esc(key)}">${f?"★ Following":"☆ Follow"}</button>
     ${(()=>{ const row = r=>{ const on=!!AG[r.id];
       const btn = r.kind==="e" ? `<button class="add" type="button" data-ex="${esc(r.code)}">${on?"✓":"+"}</button>`
         : r.kind==="p" ? `<button class="add" type="button" data-talk="${esc(r.code)}" data-sid="${r.sid}">${on?"✓":"+"}</button>`
         : `<button class="add" type="button" data-add="${r.sid}">${on?"✓":"+"}</button>`;
-      return `<li class="talk${on?" on":""}"><div style="min-width:0"><span class="mono" style="font-size:12px">${esc(r.when)}${r.r?" · "+esc(r.r):""}</span><br>${esc(r.t)}<small><span class="chip">${ROLE[r.role]||r.role}${r.kind==="p"&&r.sess&&r.sess.k==="post"?" pôster":""}</span> ${r.code?esc(r.code):r.sess?esc(r.sess.c):""}</small></div>${btn}</li>`; };
+      return `<li class="talk${on?" on":""}"><div style="min-width:0"><span class="mono" style="font-size:12px">${esc(r.when)}${r.r?" · "+esc(r.r):""}</span><br>${esc(r.t)}<small><span class="chip">${ROLE[r.role]||r.role}${r.kind==="p"&&r.sess&&r.sess.k==="post"?" poster":""}</span> ${r.code?esc(r.code):r.sess?esc(r.sess.c):""}</small></div>${btn}</li>`; };
       const live = refs.filter(r=>r.live), rest = refs.filter(r=>!r.live);
-      return `<div class="fld"><span class="lab">Ao vivo no RSNA (${live.length})</span>${live.length?`<ul class="talks">${live.map(row).join("")}</ul>`:`<span class="note-s">Nenhuma participação presencial: não modera, não dá aula e não apresenta oral.</span>`}</div>
-      ${rest.length?`<details class="box"><summary>Só trabalhos: pôsteres, exhibits e coautorias (${rest.length})</summary><ul class="talks" style="margin-top:6px">${rest.map(row).join("")}</ul></details>`:""}`; })()}`);
+      return `<div class="fld"><span class="lab">Live at RSNA (${live.length})</span>${live.length?`<ul class="talks">${live.map(row).join("")}</ul>`:`<span class="note-s">No live participation: not moderating, lecturing or giving an oral presentation.</span>`}</div>
+      ${rest.length?`<details class="box"><summary>Papers only: posters, exhibits and co-authorships (${rest.length})</summary><ul class="talks" style="margin-top:6px">${rest.map(row).join("")}</ul></details>`:""}`; })()}`);
 }
 function colleaguesToday(dk){
   const out = [];
@@ -750,8 +750,8 @@ function colleaguesToday(dk){
 }
 function renderExhibits(q){
   const sel = EXH.filter(e=>(!myTopics.size || e[5]==null || myTopics.has(e[5])) && (!q || (e[0]+" "+e[1]+" "+e[2]).toLowerCase().includes(q)));
-  $("#count").textContent = `${sel.length} Education Exhibits (sem horário, Learning Center e on-demand)${sel.length>150?" · mostrando 150, use a busca":""}`;
-  $("#list").innerHTML = sel.slice(0,150).map(e=>{ const on=!!AG["e"+e[0]]; return `<div class="pc${on?" on":""}"><div class="card"><div class="meta"><span class="mono">${esc(e[0])}</span>${e[5]!=null?`<span class="tag t-ai">${esc(TSHORT(e[5]))}</span>`:""}</div><h3>${esc(e[1])}</h3><div class="note-s">${esc(e[2])}</div></div><button class="add" type="button" data-ex="${esc(e[0])}">${on?"✓":"+"}</button></div>`; }).join("") || `<div class="empty">Nada com esses filtros.</div>`;
+  $("#count").textContent = `${sel.length} Education Exhibits (unscheduled, Learning Center and on demand)${sel.length>150?" · showing 150, use search":""}`;
+  $("#list").innerHTML = sel.slice(0,150).map(e=>{ const on=!!AG["e"+e[0]]; return `<div class="pc${on?" on":""}"><div class="card"><div class="meta"><span class="mono">${esc(e[0])}</span>${e[5]!=null?`<span class="tag t-ai">${esc(TSHORT(e[5]))}</span>`:""}</div><h3>${esc(e[1])}</h3><div class="note-s">${esc(e[2])}</div></div><button class="add" type="button" data-ex="${esc(e[0])}">${on?"✓":"+"}</button></div>`; }).join("") || `<div class="empty">Nothing matches these filters.</div>`;
 }
 
 
@@ -763,8 +763,8 @@ function boothNum(x){ const m = String(x[3]).match(/\d+/); return m?+m[0]:99999;
 function renderEstandes(){
   const rows = XS.slice().sort((a,b)=>boothNum(a)-boothNum(b));
   const vis = rows.filter(x=>AG["x"+x[0]]&&AG["x"+x[0]].visited).length;
-  $("#xSum").textContent = `${vis}/${rows.length} visitados`;
-  const chips = [["minha","Minha rota"],["todos","Todos"],["ais","AI Showcase"],["south","South Hall A"],["north","North Hall B"],["pend","Não visitados"]];
+  $("#xSum").textContent = `${vis}/${rows.length} visited`;
+  const chips = [["minha","My route"],["todos","All"],["ais","AI Showcase"],["south","South Hall A"],["north","North Hall B"],["pend","Not visited"]];
   $("#xChips").innerHTML = chips.map(([k,l])=>`<button class="fchip" type="button" data-xf="${k}" aria-pressed="${xFilter===k}">${l}</button>`).join("");
   const qx = ($("#xq").value||"").trim().toLowerCase();
   const sel = rows.filter(x=> (!qx || (x[1]+" "+x[3]+" "+x[5]).toLowerCase().includes(qx)) && (xFilter==="todos" ? !!qx || true : xFilter==="minha" ? !!AG["x"+x[0]] : xFilter==="pend" ? (!!AG["x"+x[0]] && !AG["x"+x[0]].visited) : standRoute(x)===xFilter));
@@ -773,10 +773,10 @@ function renderEstandes(){
     const r = standRoute(x); if(r!==last){ last=r; h += `<div class="hallh">${XROUTES[r]}${r==="ais"?" · South Hall A":""}</div>`; }
     const a = AG["x"+x[0]], v = !!(a&&a.visited);
     h += `<div class="xrow${v?" done":""}"><span class="booth">${esc(String(x[3]).split(",")[0])}</span>
-      <button class="pbtn" type="button" data-xopen="${x[0]}" style="padding:0"><span style="min-width:0"><b>${esc(x[1])}</b><small>${tagPills(x[6])} ${a&&a.note?"· tem anotação":""}${a&&a.media&&a.media.length?` · ${a.media.length} anexo(s)`:""}</small></span></button>
-      ${a?`<button class="vis" type="button" data-xvis="${x[0]}" aria-pressed="${v}" aria-label="Marcar visitado">${v?"✓":"○"}</button>`:`<button class="add" type="button" data-xadd="${x[0]}" aria-label="Pôr na rota">＋</button>`}</div>`;
+      <button class="pbtn" type="button" data-xopen="${x[0]}" style="padding:0"><span style="min-width:0"><b>${esc(x[1])}</b><small>${tagPills(x[6])} ${a&&a.note?"· has notes":""}${a&&a.media&&a.media.length?` · ${a.media.length} attachment(s)`:""}</small></span></button>
+      ${a?`<button class="vis" type="button" data-xvis="${x[0]}" aria-pressed="${v}" aria-label="Mark visited">${v?"✓":"○"}</button>`:`<button class="add" type="button" data-xadd="${x[0]}" aria-label="Add to route">＋</button>`}</div>`;
   }
-  $("#xList").innerHTML = h || `<div class="empty">${xFilter==="minha"?"Sua rota está vazia. Busque um expositor ou veja Todos e toque em ＋ para montar a rota.":"Nada neste filtro."}</div>`;
+  $("#xList").innerHTML = h || `<div class="empty">${xFilter==="minha"?"Your route is empty. Search an exhibitor or open All and tap ＋ to build it.":"Nothing in this filter."}</div>`;
   const q = ($("#xq").value||"").trim().toLowerCase();
   if(true) return;
   $("#xRes").innerHTML = q.length<2 ? `<div class="muted" style="font-size:13px">Digite 2 letras para buscar. O estande desses aparece no Floor Plan oficial.</div>`
@@ -786,7 +786,7 @@ function ensureStand(xid){ const id="x"+xid; if(!AG[id]) store.put(id,{kind:"x",
 
 /* ---------- social ---------- */
 function socialHtml(list){
-  return list.map(d=>{ const on=!!AG["s"+d.id]; return `<div class="crow" style="grid-template-columns:52px minmax(0,1fr) auto"><span class="mono" style="font-size:13px">${hm(d.s)}</span><div style="min-width:0"><b style="font-weight:600">${esc(d.t)}</b><br><span class="note-s">${esc(d.r)}${d.b==="F"?" · fora do McCormick":""}</span></div><button class="add" type="button" data-add="${d.id}">${on?"✓":"+"}</button></div>`; }).join("");
+  return list.map(d=>{ const on=!!AG["s"+d.id]; return `<div class="crow" style="grid-template-columns:52px minmax(0,1fr) auto"><span class="mono" style="font-size:13px">${hm(d.s)}</span><div style="min-width:0"><b style="font-weight:600">${esc(d.t)}</b><br><span class="note-s">${esc(d.r)}${d.b==="F"?" · outside McCormick":""}</span></div><button class="add" type="button" data-add="${d.id}">${on?"✓":"+"}</button></div>`; }).join("");
 }
 
 /* ---------- carimbo de hora ---------- */
@@ -796,7 +796,7 @@ function stampFor(id){
   const parts = [hm(now.m)];
   if(i && i.d===now.d && i.s!=null){ const off = now.m - i.s; if(off>=-15 && off<=i.u+30) parts.push(`${off>=0?"+":""}${off} min`); }
   const rec = (AG[id]&&AG[id].rec)||[];
-  if(rec.length){ const last = rec[rec.length-1]; const sec = (Date.now()-Date.parse(last.at))/1000; if(sec>=0 && sec<4*3600) parts.push(`gravação ${rec.length} · ${mmss(sec)}`); }
+  if(rec.length){ const last = rec[rec.length-1]; const sec = (Date.now()-Date.parse(last.at))/1000; if(sec>=0 && sec<4*3600) parts.push(`rec ${rec.length} · ${mmss(sec)}`); }
   return `[${parts.join(" · ")}]`;
 }
 function insertAtCursor(ta, text){
@@ -815,23 +815,23 @@ function itemContext(i){
   lines.push(`Título: ${i.t}`); if(i.c) lines.push(`Código: ${i.c}`);
   lines.push(i.contact?`Pessoa que conheci no RSNA: ${i.t}${i.r?" ("+i.r+")":""}`:i.loose?"Caderno do dia: anotações soltas e conversas":i.stand?`Estande: ${i.r}`:i.exh?"Education Exhibit (sem horário)":`Quando: ${D?D[1]+" "+D[2]:i.d} ${hm(i.s)}–${hm(end(i))} · Sala ${i.r}`);
   if(i.who) lines.push(`Apresentação: ${i.who}`);
-  if(i.sess){ if(i.sess.m) lines.push(`Moderação: ${i.sess.m}`); if(a.kind==="s" && i.sess.x.length) lines.push("Falas da sessão:\n"+i.sess.x.slice(0,14).map(x=>`- ${x[0]} ${x[1]} (${x[2]})`).join("\n")); if(i.sess.ds) lines.push(`Descrição: ${i.sess.ds}`); }
+  if(i.sess){ if(i.sess.m) lines.push(`Moderators: ${i.sess.m}`); if(a.kind==="s" && i.sess.x.length) lines.push("Falas da sessão:\n"+i.sess.x.slice(0,14).map(x=>`- ${x[0]} ${x[1]} (${x[2]})`).join("\n")); if(i.sess.ds) lines.push(`Descrição: ${i.sess.ds}`); }
   if(i.x && i.x[5]) lines.push(`Sobre o expositor: ${i.x[5]}`);
   if(a.dica) lines.push(`Observação da agenda: ${a.dica}`);
   if(a.by) lines.push(`Indicado por: ${a.by}`); if(a.para==="fred") lines.push("Visto a pedido do Fred.");
   return lines.join("\n");
 }
 function itemText(i){ const a=i.a, D=DAYS.find(x=>x[0]===i.d);
-  const head = i.contact?`Pessoa que conheci: ${i.t}${i.r?" ("+i.r+")":""}`:i.loose?`Caderno do dia${D?" · "+D[1]+" "+D[2]:""}`:i.stand?`Estande · ${i.t} · ${i.r}`:i.exh?`Education Exhibit · ${i.c} · ${i.t}`:`RSNA 2026 · ${D?D[1]+" "+D[2]:""} ${hm(i.s)} · ${i.r}${i.c?" · "+i.c:""}\n${i.t}`;
-  return `${head}\n\nMinhas anotações\n${a.note||"(sem anotações)"}${a.plaud?`\n\nGravação (resumo e link)\n${a.plaud}`:""}${a.contacts?`\n\nContatos\n${a.contacts}`:""}${a.links?`\n\nLinks\n${a.links}`:""}`; }
+  const head = i.contact?`Person I met: ${i.t}${i.r?" ("+i.r+")":""}`:i.loose?`Day notebook${D?" · "+D[1]+" "+D[2]:""}`:i.stand?`Booth · ${i.t} · ${i.r}`:i.exh?`Education Exhibit · ${i.c} · ${i.t}`:`RSNA 2026 · ${D?D[1]+" "+D[2]:""} ${hm(i.s)} · ${i.r}${i.c?" · "+i.c:""}\n${i.t}`;
+  return `${head}\n\nMy notes\n${a.note||"(no notes)"}${a.plaud?`\n\nRecording (summary and link)\n${a.plaud}`:""}${a.contacts?`\n\nContacts\n${a.contacts}`:""}${a.links?`\n\nLinks\n${a.links}`:""}`; }
 async function shareItem(id, statusEl){
   const say=t=>{ if(statusEl) statusEl.textContent=t; }; flushNote();
   const i=resolve(id); if(!i) return; const text=itemText(i);
   const files=[]; for(const [ix,m] of (i.a.media||[]).entries()){ const b=await localAssets.get(m.id); if(b) files.push(new File([b], m.k==="img"?`foto-${ix+1}.jpg`:m.k==="vid"?`video-${ix+1}.mp4`:`audio-${ix+1}.m4a`, {type:b.type||"application/octet-stream"})); }
   try{
-    if(navigator.share){ const data={title:i.t, text}; if(files.length && navigator.canShare && navigator.canShare({files})) data.files=files; await navigator.share(data); store.patch(id,{sentAt:new Date().toISOString()}); say(files.length && !data.files ? "Texto compartilhado. Fotos: salve pela Galeria do app." : "Compartilhado."); return; }
-  }catch(e){ if(e && e.name==="AbortError"){ say("Cancelado."); return; } }
-  try{ await navigator.clipboard.writeText(text); say("Texto copiado. Cole no Mail ou nas Notas."); }catch(e){ say("Não consegui compartilhar neste navegador."); }
+    if(navigator.share){ const data={title:i.t, text}; if(files.length && navigator.canShare && navigator.canShare({files})) data.files=files; await navigator.share(data); store.patch(id,{sentAt:new Date().toISOString()}); say(files.length && !data.files ? "Text shared. Photos: save them from the app gallery." : "Shared."); return; }
+  }catch(e){ if(e && e.name==="AbortError"){ say("Cancelled."); return; } }
+  try{ await navigator.clipboard.writeText(text); say("Text copied. Paste it into Mail or Notes."); }catch(e){ say("Sharing is not available in this browser."); }
 }
 async function sendItemEmail(id, statusEl){ return shareItem(id, statusEl); }
 async function _oldSendItemEmail(id, statusEl){
@@ -851,7 +851,7 @@ async function _oldSendItemEmail(id, statusEl){
     if(sample && (a.note || a.plaud || a.contacts || photos.length)){
       let imgs = [];
       try{ const lim = await sample.limits(); if(lim && lim.images){ imgs = (await Promise.all(photos.slice(0, Math.min(3, lim.images.maxCount||3)).map(p=>shrink(p.blob,1200,0.75)))); } }catch(e){}
-      const prompt = `Você ajuda um radiologista brasileiro no RSNA 2026. Escreva em português do Brasil um resumo objetivo do que ele viu, baseado SOMENTE nas anotações dele${imgs.length?", nas fotos anexadas (slides/pôsteres)":""} e nas informações abaixo. Não invente dados nem números. As anotações têm carimbos [hora · minuto da aula · minuto da gravação]; quando citar um ponto, mantenha o carimbo dele para ele achar o trecho no áudio. Formato em texto simples: um parágrafo de 3 a 6 frases; depois "Pontos para levar:" com 3 a 5 itens começando com "- "${a.para==="fred"?'; depois "Para o Fred:" com 2 a 3 itens':""}${a.contacts?'; depois "Contatos:" listando as pessoas citadas':""}.\n\n${itemContext(i)}\n\nAnotações:\n${a.note||"(sem anotações)"}${a.plaud?`\n\nResumo/transcrição do Plaud (gravação da aula):\n${a.plaud.slice(0,30000)}`:""}${a.contacts?`\n\nPessoas que conheci:\n${a.contacts}`:""}`;
+      const prompt = `Você ajuda um radiologista brasileiro no RSNA 2026. Escreva em português do Brasil um resumo objetivo do que ele viu, baseado SOMENTE nas anotações dele${imgs.length?", nas fotos anexadas (slides/pôsteres)":""} e nas informações abaixo. Não invente dados nem números. As anotações têm carimbos [hora · minuto da aula · minuto da gravação]; quando citar um ponto, mantenha o carimbo dele para ele achar o trecho no áudio. Formato em texto simples: um parágrafo de 3 a 6 frases; depois "Pontos para levar:" com 3 a 5 itens começando com "- "${a.para==="fred"?'; depois "Para o Fred:" com 2 a 3 itens':""}${a.contacts?'; depois "Contatos:" listando as pessoas citadas':""}.\n\n${itemContext(i)}\n\nAnotações:\n${a.note||"(no notes)"}${a.plaud?`\n\nResumo/transcrição do Plaud (gravação da aula):\n${a.plaud.slice(0,30000)}`:""}${a.contacts?`\n\nPessoas que conheci:\n${a.contacts}`:""}`;
       const r = await sample(prompt, imgs.length?{images:imgs}:{});
       summary = (r && r.text || "").trim();
     }
@@ -863,7 +863,7 @@ async function _oldSendItemEmail(id, statusEl){
     const subject = `RSNA 2026 · ${i.contact?"Contato":i.loose?"Caderno":i.stand?"Estande":i.exh?"Exhibit":(D?D[1]+" "+D[2]:"")} · ${i.c?i.c+" · ":""}${i.t}`.slice(0,180);
     const P = t=>esc(t).replace(/\n/g,"<br>");
     const html = `<h2 style="font-family:Arial,sans-serif">${esc(i.t)}</h2><p style="font-family:Arial,sans-serif;color:#555">${P(i.contact?`Pessoa que conheci${i.r?" · "+i.r:""}`:i.loose?"Caderno do dia":i.stand?i.r:i.exh?"Education Exhibit":`${D?D[1]+" "+D[2]:""} · ${hm(i.s)}–${hm(end(i))} · ${i.r}`)}${i.c?" · "+esc(i.c):""}${a.by?` · indicado por ${esc(a.by)}`:""}${a.para==="fred"?" · <b>para o Fred</b>":""}</p>`
-      + `<h3 style="font-family:Arial,sans-serif">1. Minhas anotações (na íntegra)</h3><p style="font-family:Arial,sans-serif">${a.note?P(a.note):"(sem anotações)"}</p>`
+      + `<h3 style="font-family:Arial,sans-serif">1. Minhas anotações (na íntegra)</h3><p style="font-family:Arial,sans-serif">${a.note?P(a.note):"(no notes)"}</p>`
       + (a.plaud?`<h3 style="font-family:Arial,sans-serif">2. Plaud (resumo e link)</h3><p style="font-family:Arial,sans-serif">${P(a.plaud).replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1">$1</a>')}</p>`:"")
       + (a.contacts?`<h3 style="font-family:Arial,sans-serif">Pessoas que conheci</h3><p style="font-family:Arial,sans-serif">${P(a.contacts)}</p>`:"")
       + (a.links?`<h3 style="font-family:Arial,sans-serif">Links de arquivos grandes (iCloud/Drive)</h3><p style="font-family:Arial,sans-serif">${P(a.links)}</p>`:"")
@@ -872,7 +872,7 @@ async function _oldSendItemEmail(id, statusEl){
       + atts.map((x,ix)=>`<p style="font-family:Arial,sans-serif;color:#555;font-size:13px;margin-bottom:2px">Foto ${ix+1}${x._st?" · "+esc(x._st):""}</p><p style="margin-top:0"><img src="cid:att${ix}" style="max-width:100%"></p>`).join("")
       + (leftover.length?`<p style="font-family:Arial,sans-serif;color:#555">${leftover.length} arquivo(s) chegam em seguida, nesta mesma conversa.</p>`:"")
       + `<p style="font-family:Arial,sans-serif;color:#888;font-size:12px">Enviado pela Agenda RSNA 2026: ${ARTIFACT_URL}</p>`;
-    const text = `${i.t}\n\n1. MINHAS ANOTAÇÕES (NA ÍNTEGRA)\n${a.note||"(sem anotações)"}${a.plaud?`\n\n2. PLAUD (RESUMO E LINK)\n${a.plaud}`:""}${a.contacts?`\n\nPessoas que conheci\n${a.contacts}`:""}${a.links?`\n\nLinks de arquivos grandes\n${a.links}`:""}${summary?`\n\n----------\n${a.plaud?"3":"2"}. RESUMO FEITO PELA IA\n${summary}`:""}`;
+    const text = `${i.t}\n\n1. MINHAS ANOTAÇÕES (NA ÍNTEGRA)\n${a.note||"(no notes)"}${a.plaud?`\n\n2. PLAUD (RESUMO E LINK)\n${a.plaud}`:""}${a.contacts?`\n\nPessoas que conheci\n${a.contacts}`:""}${a.links?`\n\nLinks de arquivos grandes\n${a.links}`:""}${summary?`\n\n----------\n${a.plaud?"3":"2"}. RESUMO FEITO PELA IA\n${summary}`:""}`;
     say("Enviando…");
     const r1 = await mcp.callTool(GMAIL, "send_message", {to:[mailTo()], subject, htmlBody:html, body:text, attachments:atts.map(({_st,...x})=>x)});
     const thread = r1 && r1.payload && (r1.payload.threadId || (r1.payload.message && r1.payload.message.threadId));
@@ -897,14 +897,14 @@ async function _oldSendItemEmail(id, statusEl){
 }
 async function sendDayEmail(dk){ const m=dayModel(dk); const D=DAYS.find(x=>x[0]===dk); const text=`RSNA 2026 · ${D[1]} ${D[2]}\n\n`+m.items.filter(i=>i.a.pick!==false).map(i=>`${hm(i.s)} · ${i.t} · ${i.r}${i.a.note?"\n"+i.a.note:""}`).join("\n\n");
   try{ if(navigator.share){ await navigator.share({title:`RSNA 2026 · ${D[1]} ${D[2]}`, text}); return; } }catch(e){ if(e&&e.name==="AbortError") return; }
-  try{ await navigator.clipboard.writeText(text); toast("Resumo do dia copiado"); }catch(e){ toast("Não consegui compartilhar"); } }
+  try{ await navigator.clipboard.writeText(text); toast("Day summary copied"); }catch(e){ toast("Could not share"); } }
 async function _oldSendDayEmail(dk){
   const m = dayModel(dk); const D = DAYS.find(x=>x[0]===dk);
   const mcp = await claude.use("mcp").catch(()=>null);
   if(!mcp){ toast("Envio por e-mail indisponível aqui."); return; }
   const P = t=>esc(t).replace(/\n/g,"<br>");
   const items = m.items.filter(i=>i.a.pick!==false);
-  const html = `<h2 style="font-family:Arial,sans-serif">RSNA 2026 · ${D[1]} ${D[2]}</h2>` + items.map(i=>`<h3 style="font-family:Arial,sans-serif">${hm(i.s)} · ${esc(i.t)}</h3><p style="font-family:Arial,sans-serif;color:#555">${esc(i.r)}${i.c?" · "+esc(i.c):""}${i.a.para==="fred"?" · para o Fred":""}${i.a.sentAt?" · resumo completo já enviado":""}</p><p style="font-family:Arial,sans-serif">${i.a.note?P(i.a.note):"(sem anotações)"}</p>`).join("")
+  const html = `<h2 style="font-family:Arial,sans-serif">RSNA 2026 · ${D[1]} ${D[2]}</h2>` + items.map(i=>`<h3 style="font-family:Arial,sans-serif">${hm(i.s)} · ${esc(i.t)}</h3><p style="font-family:Arial,sans-serif;color:#555">${esc(i.r)}${i.c?" · "+esc(i.c):""}${i.a.para==="fred"?" · para o Fred":""}${i.a.sentAt?" · resumo completo já enviado":""}</p><p style="font-family:Arial,sans-serif">${i.a.note?P(i.a.note):"(no notes)"}</p>`).join("")
     + `<p style="font-family:Arial,sans-serif;color:#888;font-size:12px">${ARTIFACT_URL}</p>`;
   try{ toast("Enviando resumo do dia…"); await mcp.callTool(GMAIL,"send_message",{to:[mailTo()], subject:`RSNA 2026 · resumo de ${D[1]} ${D[2]}`, htmlBody:html, body:items.map(i=>`${hm(i.s)} ${i.t}\n${i.a.note||""}`).join("\n\n")}); toast("Resumo do dia enviado"); }
   catch(e){ toast(`Não enviou (${e&&e.code||"erro"})`); }
@@ -916,13 +916,13 @@ function renderFechamento(){
   const items = Object.keys(AG).map(resolve).filter(i=>i && ((i.d===day && i.a.pick!==false && !i.stand) || (i.stand && i.a.visited && hasContent(i.a) && !i.a.sentAt)));
   const pend = items.filter(i=>!i.a.sentAt && hasContent(i.a));
   const semPlaud = items.filter(i=>!i.stand && !i.exh && !i.loose && !i.contact && i.a.kind!=="c" && !i.a.plaud);
-  $("#fechSum").textContent = `Fechamento do dia no hotel · ${pend.length} não compartilhado(s)${qCount?` · ${qCount} arquivo(s) guardado(s)`:""}${semPlaud.length?` · ${semPlaud.length} sem Plaud`:""}`; renderQueueBadge();
+  $("#fechSum").textContent = `End of day · ${pend.length} not shared${qCount?` · ${qCount} file(s) saved`:""}${semPlaud.length?` · ${semPlaud.length} without recording link`:""}`; renderQueueBadge();
   $("#fechList").innerHTML = items.length ? items.sort((x,y)=>(x.s??9999)-(y.s??9999)).map(i=>{ const a=i.a;
-      const st = a.sentAt ? `<span class="chip" style="color:var(--ok)">✓ compartilhado</span>` : hasContent(a) ? `<span class="chip fred">não compartilhado</span>` : `<span class="chip">sem anotações</span>`;
+      const st = a.sentAt ? `<span class="chip" style="color:var(--ok)">✓ shared</span>` : hasContent(a) ? `<span class="chip fred">not shared</span>` : `<span class="chip">no notes</span>`;
       const pl = (i.stand||i.exh||i.loose||i.contact||a.kind==="c") ? "" : a.plaud ? `<span class="chip sug">Plaud ✓</span>` : `<span class="chip est">falta Plaud</span>`;
-      return `<div class="crow" style="grid-template-columns:44px minmax(0,1fr) auto"><span class="mono" style="font-size:12px">${i.s!=null?hm(i.s):"—"}</span><button class="pbtn" type="button" data-open="${i.id}" style="padding:0"><span style="min-width:0"><b>${esc(i.t)}</b><small>${st} ${pl}</small></span></button>${hasContent(a)?`<button class="add" type="button" data-mail="${i.id}">${a.sentAt?"De novo":"Compartilhar"}</button>`:"<span></span>"}</div>`; }).join("")
-    : `<div class="muted">Nada neste dia.</div>`;
-  $("#sendAll").hidden = !pend.length; $("#sendAll").textContent = `Baixar backup das anotações`;
+      return `<div class="crow" style="grid-template-columns:44px minmax(0,1fr) auto"><span class="mono" style="font-size:12px">${i.s!=null?hm(i.s):"—"}</span><button class="pbtn" type="button" data-open="${i.id}" style="padding:0"><span style="min-width:0"><b>${esc(i.t)}</b><small>${st} ${pl}</small></span></button>${hasContent(a)?`<button class="add" type="button" data-mail="${i.id}">${a.sentAt?"Again":"Share"}</button>`:"<span></span>"}</div>`; }).join("")
+    : `<div class="muted">Nothing on this day.</div>`;
+  $("#sendAll").hidden = !pend.length; $("#sendAll").textContent = `Download notes backup`;
 }
 async function sendAllPending(){ downloadBackup(); }
 async function _oldSendAllPending(){
@@ -953,10 +953,10 @@ function renderAgora(){
   const L = liveItems(); const box = $("#agora");
   if(!L || (!L.cur.length && !L.nxt)){ box.innerHTML=""; return; }
   let h = `<div class="now">`;
-  if(L.cur.length){ h += `<div class="lab">Agora</div>` + L.cur.slice(0,2).map(i=>`<div><button class="pbtn" type="button" data-open="${i.id}" style="padding:0"><span style="min-width:0"><h3>${esc(i.t)}</h3><small class="mono">${esc(i.r)} · termina ${hm(end(i))} (${end(i)-L.now.m} min)</small></span></button></div>${captureBar(i.id)}`).join(""); }
-  else h += `<div class="lab">Intervalo</div>${captureBar("caderno")}`;
+  if(L.cur.length){ h += `<div class="lab">Now</div>` + L.cur.slice(0,2).map(i=>`<div><button class="pbtn" type="button" data-open="${i.id}" style="padding:0"><span style="min-width:0"><h3>${esc(i.t)}</h3><small class="mono">${esc(i.r)} · ends ${hm(end(i))} (${end(i)-L.now.m} min)</small></span></button></div>${captureBar(i.id)}`).join(""); }
+  else h += `<div class="lab">Break</div>${captureBar("caderno")}`;
   if(L.nxt){ const prevDone = dayModel(day).items.filter(i=>i.a.pick!==false && end(i)<=L.now.m).sort((x,y)=>end(y)-end(x))[0]; const from = L.cur[0] || prevDone; const w = from?walk(from,L.nxt):null; const leave = L.nxt.s-(w||0)-2; const left = leave-L.now.m;
-    h += `<div class="next${left<=5?" go":""}">Próximo: <b>${esc(L.nxt.t)}</b><br><span class="mono">${hm(L.nxt.s)} · ${esc(L.nxt.r)}</span>${w!=null&&from&&from.b!==L.nxt.b?` · ~${w} min a pé`:""}${w!=null?` · ${left<=0?"saia agora":`saia às ${hm(leave)}`}`:""}</div>`; }
+    h += `<div class="next${left<=5?" go":""}">Next: <b>${esc(L.nxt.t)}</b><br><span class="mono">${hm(L.nxt.s)} · ${esc(L.nxt.r)}</span>${w!=null&&from&&from.b!==L.nxt.b?` · ~${w} min walk`:""}${w!=null?` · ${left<=0?"leave now":`leave at ${hm(leave)}`}`:""}</div>`; }
   box.innerHTML = h + `</div>`;
 }
 function notebookId(){ const id = "n"+day; if(!AG[id]) store.put(id,{kind:"n", d:day, note:"", media:[], at:new Date().toISOString()}); return id; }
@@ -966,20 +966,20 @@ function quickAction(kind, id){
   if(kind==="foto") $("#qaFoto").click();
   else if(kind==="video") $("#qaVideo").click();
   else if(kind==="galeria") $("#qaGal").click();
-  else if(kind==="marca"){ const a=AG[tid]||{}; const st=stampFor(tid); store.patch(tid,{note:(a.note?a.note.replace(/\s*$/,"")+"\n":"")+st+" "}); toast(`Momento marcado ${st}`); if(!$("#sheet").hidden && openId===tid) renderSheet(); }
+  else if(kind==="marca"){ const a=AG[tid]||{}; const st=stampFor(tid); store.patch(tid,{note:(a.note?a.note.replace(/\s*$/,"")+"\n":"")+st+" "}); toast(`Moment marked ${st}`); if(!$("#sheet").hidden && openId===tid) renderSheet(); }
 }
 function openCapture(){
   openId=null; openPerson=null;
   const L = liveItems(); const cur = L ? L.cur : [];
   const today = DAYS.some(d=>d[0]===day);
-  openSheet(`<button class="close" type="button" data-close aria-label="Fechar">×</button><div class="grab"></div>
-    <h2 id="sheetTitle">Capturar</h2>
-    <div class="qpick">${cur.map(i=>`<button class="card" type="button" data-qt="${i.id}" aria-pressed="false"><b style="font-weight:600">${esc(i.t)}</b><span class="note-s">Agora · ${esc(i.r)}</span></button>`).join("")}
-      <button class="card" type="button" data-qt="caderno" aria-pressed="${cur.length?"false":"true"}"><b style="font-weight:600">Caderno do dia</b><span class="note-s">Ideias, conversas de corredor, qualquer coisa sem compromisso</span></button></div>
+  openSheet(`<button class="close" type="button" data-close aria-label="Close">×</button><div class="grab"></div>
+    <h2 id="sheetTitle">Capture</h2>
+    <div class="qpick">${cur.map(i=>`<button class="card" type="button" data-qt="${i.id}" aria-pressed="false"><b style="font-weight:600">${esc(i.t)}</b><span class="note-s">Now · ${esc(i.r)}</span></button>`).join("")}
+      <button class="card" type="button" data-qt="caderno" aria-pressed="${cur.length?"false":"true"}"><b style="font-weight:600">Day notebook</b><span class="note-s">Ideas, hallway conversations, anything not tied to a session</span></button></div>
     <div id="qtBar">${captureBar(cur.length?cur[0].id:"caderno")}</div>
-    <button class="btn" type="button" data-qa-open="1">Abrir anotações do item escolhido</button>
-    <button class="btn primary" type="button" id="newContact">Conheci alguém</button>
-    <p class="note-s" style="margin:0">"Conheci alguém" cria uma ficha com nome, instituição, contato, assunto e foto do crachá ou do cartão. Vai junto no fechamento do dia.</p>`);
+    <button class="btn" type="button" data-qa-open="1">Open notes for the selected item</button>
+    <button class="btn primary" type="button" id="newContact">I met someone</button>
+    <p class="note-s" style="margin:0">"I met someone" creates a card with name, institution, contact, topic and a photo of the badge or business card. It shows up in your end-of-day list.</p>`);
   if(cur.length){ const b=document.querySelector(`[data-qt="${cur[0].id}"]`); if(b) b.setAttribute("aria-pressed","true"); }
 }
 function newContact(){
@@ -1011,14 +1011,14 @@ async function processQueue(force){
   }finally{ qBusy=false; renderQueueBadge(); }
 }
 async function showPending(id){ const g=$("#mediaGrid"); if(!g) return; const l=(await qAll()).filter(x=>x.target===id && !x.replace); g.querySelectorAll(".pend").forEach(x=>x.remove()); for(const x of l){ const d=document.createElement("div"); d.className="mi aud pend"; d.innerHTML=`<span class="note-s">⏳ ${x.k==="vid"?"Vídeo":"Áudio"} guardado no celular · ${esc(x.st||"")}<br>sobe no Wi-Fi do hotel</span>`; g.appendChild(d); } }
-function renderQueueBadge(){ const el=$("#syncState"); if(el && qCount>0) el.textContent = `${qCount} guardado(s) p/ Wi-Fi`; const b=$("#sendQueue"); if(b){ b.hidden=!qCount; b.textContent=`Enviar fotos e vídeos guardados (${qCount})`; } }
+function renderQueueBadge(){ const el=$("#syncState"); if(el && qCount>0) el.textContent = `${qCount} guardado(s) p/ Wi-Fi`; const b=$("#sendQueue"); if(b){ b.hidden=!qCount; b.textContent=`Upload saved photos and videos (${qCount})`; } }
 window.addEventListener("online", ()=>{ if(!ecoOn()) processQueue(); });
 setInterval(()=>{ if(navigator.onLine && !ecoOn()) processQueue(); }, 60000);
 setInterval(()=>{ if(view==="dia" && !document.hidden) renderAgora(); }, 30000);
 
 /* ---------- backup ---------- */
-function downloadBackup(){ const data={app:"guia-rsna-2026",at:new Date().toISOString(),agenda:AG,seguindo:FOL,especialidades:[...myTopics]}; const b=new Blob([JSON.stringify(data,null,1)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download=`guia-rsna-2026-backup-${new Date().toISOString().slice(0,10)}.json`; document.body.appendChild(a); a.click(); a.remove(); toast("Backup baixado (texto; fotos ficam no celular)"); }
-function importBackup(file){ const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(r.result); if(d.app!=="guia-rsna-2026") throw 0; AG={...AG,...(d.agenda||{})}; FOL={...FOL,...(d.seguindo||{})}; LS.set("rsna26p-ag",AG); LS.set("rsna26p-fol",FOL); if(d.especialidades){ myTopics=new Set(d.especialidades); LS.set("rsna26p-topics",[...myTopics]); } renderChips(); render(); toast("Backup importado"); }catch(e){ toast("Arquivo de backup inválido"); } }; r.readAsText(file); }
+function downloadBackup(){ const data={app:"guia-rsna-2026",at:new Date().toISOString(),agenda:AG,seguindo:FOL,especialidades:[...myTopics]}; const b=new Blob([JSON.stringify(data,null,1)],{type:"application/json"}); const a=document.createElement("a"); a.href=URL.createObjectURL(b); a.download=`guia-rsna-2026-backup-${new Date().toISOString().slice(0,10)}.json`; document.body.appendChild(a); a.click(); a.remove(); toast("Backup downloaded (text; photos stay on the phone)"); }
+function importBackup(file){ const r=new FileReader(); r.onload=()=>{ try{ const d=JSON.parse(r.result); if(d.app!=="guia-rsna-2026") throw 0; AG={...AG,...(d.agenda||{})}; FOL={...FOL,...(d.seguindo||{})}; LS.set("rsna26p-ag",AG); LS.set("rsna26p-fol",FOL); if(d.especialidades){ myTopics=new Set(d.especialidades); LS.set("rsna26p-topics",[...myTopics]); } renderChips(); render(); toast("Backup imported"); }catch(e){ toast("Invalid backup file"); } }; r.readAsText(file); }
 
 /* ---------- mídia local (IndexedDB, só neste celular) ---------- */
 const MDB = new Promise(res=>{ try{ const r=indexedDB.open("rsna26p-midia",1); r.onupgradeneeded=()=>r.result.createObjectStore("m"); r.onsuccess=()=>res(r.result); r.onerror=()=>res(null); }catch(e){ res(null); } });
@@ -1053,10 +1053,10 @@ async function upload(files, k, target){
   const st = $("#upState");
   for(const f of files){
     let blob = f, type;
-    if(k==="img"){ blob = await toJpeg(f); type = blob && blob.type ? blob.type : "image/jpeg"; if(!blob){ toast("Formato de foto não aceito."); continue; } }
-    else { type = avType(f,k); if(!type){ toast("Áudio precisa ser .m4a (Gravador do iPhone) ou .webm."); continue; } }
-    if(blob.size > 80*1024*1024){ toast(`${f.name||"Arquivo"} tem ${Math.round(blob.size/1048576)} MB: fica no iPhone/iCloud. Cole o link do iCloud no campo de links.`); const lt=$("#linksTa"); if(lt){ lt.focus(); lt.scrollIntoView({block:"center"}); } continue; }
-    if(st) st.textContent = `Salvando ${f.name||"arquivo"}…`; else toast("Salvando…");
+    if(k==="img"){ blob = await toJpeg(f); type = blob && blob.type ? blob.type : "image/jpeg"; if(!blob){ toast("Photo format not supported."); continue; } }
+    else { type = avType(f,k); if(!type){ toast("Audio must be .m4a (Voice Memos) or .webm."); continue; } }
+    if(blob.size > 80*1024*1024){ toast(`${f.name||"File"} is ${Math.round(blob.size/1048576)} MB: keep it in iCloud Photos and paste its link in the links field.`); const lt=$("#linksTa"); if(lt){ lt.focus(); lt.scrollIntoView({block:"center"}); } continue; }
+    if(st) st.textContent = `Saving ${f.name||"file"}…`; else toast("Saving…");
     const stamp = stampFor(id);
     if(ecoOn()){
       const qid = Date.now()+"-"+Math.random();
@@ -1068,14 +1068,14 @@ async function upload(files, k, target){
       toast(k==="img" ? "Foto salva · original sobe no Wi-Fi" : (k==="vid"?"Vídeo":"Áudio")+" guardado no celular · sobe no Wi-Fi");
       continue;
     }
-    if(false){ const ok = await qPut({qid:Date.now()+"-"+Math.random(), target:id, k, blob, type, name:f.name||"", at:new Date().toISOString(), st:stamp}); qCount++; renderQueueBadge(); toast(ok?"Sem internet: guardado no celular, envia sozinho depois":"Sem internet e sem espaço local para guardar"); continue; }
+    if(false){ const ok = await qPut({qid:Date.now()+"-"+Math.random(), target:id, k, blob, type, name:f.name||"", at:new Date().toISOString(), st:stamp}); qCount++; renderQueueBadge(); toast(ok?"Saved on the phone":"Sem internet e sem espaço local para guardar"); continue; }
     try{
       const r = await assets.upload(blob, {type});
       const media = [...((AG[id]&&AG[id].media)||[]), {id:r.id, k, name:f.name||"", at:new Date().toISOString(), st:stamp}];
       flushNote(); await store.patch(id, {media});
-      if(openId===id && !$("#sheet").hidden){ const g=$("#mediaGrid"); if(g) g.innerHTML = mediaHtml(AG[id]); } toast(k==="img"?"Foto salva":k==="vid"?"Vídeo salvo":"Áudio salvo"); const st2=$("#upState"); if(st2) st2.textContent = "";
+      if(openId===id && !$("#sheet").hidden){ const g=$("#mediaGrid"); if(g) g.innerHTML = mediaHtml(AG[id]); } toast(k==="img"?"Photo saved":k==="vid"?"Video saved":"Audio saved"); const st2=$("#upState"); if(st2) st2.textContent = "";
     }catch(e){ if(e && (e.code==="store_unavailable" || !e.code)){ const ok = await qPut({qid:Date.now()+"-"+Math.random(), target:id, k, blob, type, name:f.name||"", at:new Date().toISOString(), st:stamp}); qCount++; renderQueueBadge(); toast(ok?"Conexão ruim: guardado no celular, envia sozinho depois":"Falhou o envio. Tente de novo."); }
-      else toast(e.code==="too_large"?"Arquivo grande demais (máx. 20 MB).":e.code==="unsupported_type"?"Formato não aceito.":e.code==="quota_or_state"?"Espaço de anexos esgotado.":"Falhou o envio. Tente de novo."); if(st) st.textContent=""; }
+      else toast(e.code==="too_large"?"File too large.":e.code==="unsupported_type"?"Format not supported.":e.code==="quota_or_state"?"Phone storage is full.":"Could not save. Try again."); if(st) st.textContent=""; }
   }
 }
 
@@ -1090,23 +1090,23 @@ function toggleTalk(code, sid){
 }
 function newPersonal(){
   openId = null;
-  openSheet(`<button class="close" type="button" data-close aria-label="Fechar">×</button><div class="grab"></div>
-    <h2 id="sheetTitle">Novo compromisso</h2>
-    <div class="fld"><label for="nTitle">O quê</label><input type="text" id="nTitle" placeholder="Jantar, happy hour, museu, reunião…"></div>
-    <div class="fld"><label for="nDay">Dia</label><select id="nDay">${DAYS.map(([k,w,l])=>`<option value="${k}"${k===day?" selected":""}>${w} ${l}</option>`).join("")}</select></div>
-    <div class="frow"><div class="fld"><label for="nStart">Início</label><input type="time" id="nStart" value="19:00"></div><div class="fld"><label for="nEnd">Fim</label><input type="time" id="nEnd" value="21:00"></div></div>
-    <div class="fld"><span class="lab">Onde</span><div class="qchips"><button class="qchip" type="button" data-where="in" aria-pressed="false">No McCormick</button><button class="qchip" type="button" data-where="out" aria-pressed="true">Fora do McCormick</button></div>
-      <input type="text" id="nPlace" placeholder="Endereço, nome do lugar ou sala (ex.: S100)"></div>
-    <div class="fld"><label for="nBy">Indicado por</label><input type="text" id="nBy" placeholder="Quem indicou (opcional)"></div>
-    <button class="btn primary" type="button" id="nSave">Salvar na agenda</button>`);
+  openSheet(`<button class="close" type="button" data-close aria-label="Close">×</button><div class="grab"></div>
+    <h2 id="sheetTitle">New event</h2>
+    <div class="fld"><label for="nTitle">What</label><input type="text" id="nTitle" placeholder="Dinner, happy hour, museum, meeting…"></div>
+    <div class="fld"><label for="nDay">Day</label><select id="nDay">${DAYS.map(([k,w,l])=>`<option value="${k}"${k===day?" selected":""}>${w} ${l}</option>`).join("")}</select></div>
+    <div class="frow"><div class="fld"><label for="nStart">Start</label><input type="time" id="nStart" value="19:00"></div><div class="fld"><label for="nEnd">End</label><input type="time" id="nEnd" value="21:00"></div></div>
+    <div class="fld"><span class="lab">Where</span><div class="qchips"><button class="qchip" type="button" data-where="in" aria-pressed="false">At McCormick</button><button class="qchip" type="button" data-where="out" aria-pressed="true">Outside McCormick</button></div>
+      <input type="text" id="nPlace" placeholder="Address, venue or room (e.g., S100)"></div>
+    <div class="fld"><label for="nBy">Recommended by</label><input type="text" id="nBy" placeholder="Who recommended it (optional)"></div>
+    <button class="btn primary" type="button" id="nSave">Save to schedule</button>`);
 }
 function savePersonal(){
-  const title = $("#nTitle").value.trim(); if(!title){ toast("Dê um nome ao compromisso."); return; }
+  const title = $("#nTitle").value.trim(); if(!title){ toast("Give the event a name."); return; }
   const out = $('[data-where="out"]').getAttribute("aria-pressed")==="true";
   const d = $("#nDay").value, start = $("#nStart").value||"19:00", endv = $("#nEnd").value||start;
   const id = "c"+Date.now().toString(36);
   store.put(id,{kind:"c", title, d, start, end:endv, place:$("#nPlace").value.trim(), out, by:$("#nBy").value.trim(), para:"eu", note:"", media:[], at:new Date().toISOString()});
-  day = d; LS.set("rsna26p-day",day); closeSheet(); setView("dia"); toast("Compromisso salvo");
+  day = d; LS.set("rsna26p-day",day); closeSheet(); setView("dia"); toast("Event saved");
 }
 
 document.addEventListener("click", e=>{
@@ -1120,7 +1120,7 @@ document.addEventListener("click", e=>{
   if(t.id==="editTopics"){ openTopics(); return; }
   if((b=g("[data-topic]"))){ const k=+b.dataset.topic; offTopics.has(k)?offTopics.delete(k):offTopics.add(k); renderChips(); renderProg(); return; }
   if((b=g("[data-tag]"))){ const k=b.dataset.tag; tagOn.has(k)?tagOn.delete(k):tagOn.add(k); renderChips(); renderProg(); return; }
-  if((b=g("[data-ex]"))){ const c=b.dataset.ex, id="e"+c; if(AG[id]) store.del(id); else store.put(id,{kind:"e",code:c,by:"Eu",para:"eu",note:"",media:[],at:new Date().toISOString()}); if(!$("#sheet").hidden && openPerson) openPersonSheet(openPerson); else renderProg(); toast(AG[id]?"Na lista sem horário":"Removido"); return; }
+  if((b=g("[data-ex]"))){ const c=b.dataset.ex, id="e"+c; if(AG[id]) store.del(id); else store.put(id,{kind:"e",code:c,by:"Eu",para:"eu",note:"",media:[],at:new Date().toISOString()}); if(!$("#sheet").hidden && openPerson) openPersonSheet(openPerson); else renderProg(); toast(AG[id]?"Added to unscheduled list":"Removed"); return; }
   if((b=g("[data-fol]"))){ fol.toggle(b.dataset.fol); if(!$("#sheet").hidden && openPerson===b.dataset.fol) openPersonSheet(openPerson); return; }
   if((b=g("[data-person]"))){ openPersonSheet(b.dataset.person); return; }
   if((b=g("[data-qa]"))){ const qt=document.querySelector("[data-qt][aria-pressed=true]"); quickAction(b.dataset.qa, (b.closest("#qtBar")&&qt)?qt.dataset.qt:b.dataset.id); return; }
@@ -1129,7 +1129,7 @@ document.addEventListener("click", e=>{
   if(t.id==="fab"){ openCapture(); return; }
   if(t.id==="newContact"){ newContact(); return; }
   if((b=g("[data-stamp]"))){ const ta=$("#noteTa"); if(ta){ const v=ta.value; const pre = v && !v.endsWith("\n") ? "\n" : ""; ta.focus(); ta.setSelectionRange(v.length,v.length); insertAtCursor(ta, pre+stampFor(b.dataset.stamp)+" "); } return; }
-  if((b=g("[data-rec]"))){ const id=b.dataset.rec; flushNote(); const rec=[...((AG[id]&&AG[id].rec)||[]), {at:new Date().toISOString()}]; store.patch(id,{rec}); renderSheet(); const ta=$("#noteTa"); if(ta){ const v=ta.value; ta.focus(); ta.setSelectionRange(v.length,v.length); insertAtCursor(ta, (v&&!v.endsWith("\n")?"\n":"")+stampFor(id)+" Início da gravação "+rec.length+"\n"+stampFor(id)+" "); } toast(`Gravação ${rec.length} marcada`); return; }
+  if((b=g("[data-rec]"))){ const id=b.dataset.rec; flushNote(); const rec=[...((AG[id]&&AG[id].rec)||[]), {at:new Date().toISOString()}]; store.patch(id,{rec}); renderSheet(); const ta=$("#noteTa"); if(ta){ const v=ta.value; ta.focus(); ta.setSelectionRange(v.length,v.length); insertAtCursor(ta, (v&&!v.endsWith("\n")?"\n":"")+stampFor(id)+" Recording started "+rec.length+"\n"+stampFor(id)+" "); } toast(`Recording ${rec.length} marked`); return; }
   if((b=g("[data-route]"))){ xFilter=b.dataset.route; closeSheet(); setView("estandes"); return; }
   if((b=g("[data-xf]"))){ xFilter=b.dataset.xf; renderEstandes(); return; }
   if((b=g("[data-xvis]"))){ const xid=b.dataset.xvis, id=ensureStand(xid); store.patch(id,{visited:!AG[id].visited, visitedAt:new Date().toISOString()}); if(!$("#sheet").hidden && openId===id) renderSheet(); return; }
@@ -1148,19 +1148,19 @@ document.addEventListener("click", e=>{
     store.patch(id,{pick: now?null:true}); return; }
   if((b=g("[data-open]"))){ openId=b.dataset.open; renderSheet(); return; }
   if((b=g("[data-sess]"))){ openSessionPreview(b.dataset.sess); return; }
-  if((b=g("[data-add]"))){ const sid=b.dataset.add; toggleSession(sid); if(!$("#sheet").hidden && openPerson){ openPersonSheet(openPerson); } else if(!$("#sheet").hidden && openSess===sid){ if(AG["s"+sid]){ openId="s"+sid; renderSheet(); } else openSessionPreview(sid); } toast(AG["s"+sid]?"Na agenda":"Removida"); return; }
-  if((b=g("[data-talk]"))){ toggleTalk(b.dataset.talk, b.dataset.sid); const sid=b.dataset.sid; if($("#sheet").hidden){} else if(openPerson) openPersonSheet(openPerson); else if(openId && AG[openId]) renderSheet(); else openSessionPreview(sid); toast(AG["p"+b.dataset.talk]?"Fala na agenda":"Fala removida"); return; }
+  if((b=g("[data-add]"))){ const sid=b.dataset.add; toggleSession(sid); if(!$("#sheet").hidden && openPerson){ openPersonSheet(openPerson); } else if(!$("#sheet").hidden && openSess===sid){ if(AG["s"+sid]){ openId="s"+sid; renderSheet(); } else openSessionPreview(sid); } toast(AG["s"+sid]?"Scheduled":"Removed"); return; }
+  if((b=g("[data-talk]"))){ toggleTalk(b.dataset.talk, b.dataset.sid); const sid=b.dataset.sid; if($("#sheet").hidden){} else if(openPerson) openPersonSheet(openPerson); else if(openId && AG[openId]) renderSheet(); else openSessionPreview(sid); toast(AG["p"+b.dataset.talk]?"Talk scheduled":"Talk removed"); return; }
   if(g("[data-close]")||t.id==="scrim"){ closeSheet(); return; }
   if((b=g("[data-by]"))){ flushNote(); const v=b.dataset.by; store.patch(openId,{by: AG[openId].by===v?"":v}); renderSheet(); return; }
   if((b=g("[data-para]"))){ flushNote(); store.patch(openId,{para:b.dataset.para}); renderSheet(); return; }
   if((b=g("[data-role]"))){ flushNote(); store.patch(openId,{role: AG[openId].role==="apresento"?"":"apresento"}); renderSheet(); return; }
   if((b=g("[data-where]"))){ document.querySelectorAll("[data-where]").forEach(x=>x.setAttribute("aria-pressed", x===b)); return; }
   if(t.id==="nSave"){ savePersonal(); return; }
-  if(g("[data-rm]")){ $("#rmZone").innerHTML = `<div class="confirm">Tirar da agenda? Anotações e anexos deste item somem junto. <button class="btn danger" type="button" data-rmok>Tirar</button><button class="btn" type="button" data-rmno>Manter</button></div>`; return; }
-  if(g("[data-rmno]")){ $("#rmZone").innerHTML = `<button class="btn danger" type="button" data-rm>Tirar da agenda</button>`; return; }
-  if(g("[data-rmok]")){ const id=openId; const media=(AG[id]&&AG[id].media)||[]; closeSheet(); store.del(id); if(assets) media.forEach(m=>assets.delete(m.id).catch(()=>{})); toast("Removido"); return; }
+  if(g("[data-rm]")){ $("#rmZone").innerHTML = `<div class="confirm">Remove from schedule? Notes and attachments for this item are deleted too. <button class="btn danger" type="button" data-rmok>Remove</button><button class="btn" type="button" data-rmno>Keep</button></div>`; return; }
+  if(g("[data-rmno]")){ $("#rmZone").innerHTML = `<button class="btn danger" type="button" data-rm>Remove from schedule</button>`; return; }
+  if(g("[data-rmok]")){ const id=openId; const media=(AG[id]&&AG[id].media)||[]; closeSheet(); store.del(id); if(assets) media.forEach(m=>assets.delete(m.id).catch(()=>{})); toast("Removed"); return; }
   if((b=g("[data-delm]"))){ const ix=+b.dataset.delm; const holder=b.parentElement; if(holder.querySelector(".confirm")) return;
-    const c=document.createElement("div"); c.className="confirm"; c.style.cssText="position:absolute;inset:auto 0 0 0;font-size:12px;padding:6px"; c.innerHTML=`Apagar? <button class="btn danger" type="button" data-delok="${ix}" style="min-height:30px;padding:4px 10px">Sim</button>`; holder.style.position="relative"; holder.appendChild(c); return; }
+    const c=document.createElement("div"); c.className="confirm"; c.style.cssText="position:absolute;inset:auto 0 0 0;font-size:12px;padding:6px"; c.innerHTML=`Delete? <button class="btn danger" type="button" data-delok="${ix}" style="min-height:30px;padding:4px 10px">Yes</button>`; holder.style.position="relative"; holder.appendChild(c); return; }
   if((b=g("[data-delok]"))){ const ix=+b.dataset.delok; const id=openId; const media=[...(AG[id].media||[])]; const m=media.splice(ix,1)[0]; flushNote(); store.patch(id,{media}); renderSheet(); if(assets&&m) assets.delete(m.id).catch(()=>{}); return; }
   if(t.id==="addPersonal"){ newPersonal(); return; }
   if(t.id==="goProg"){ setView("prog"); return; }
@@ -1203,9 +1203,9 @@ function setView(v){
 function toast(t){ const el=$("#toast"); el.textContent=t; el.hidden=false; clearTimeout(toast.h); toast.h=setTimeout(()=>el.hidden=true,2200); }
 function copyAgenda(){
   const txt = DAYS.map(([k,w,lab])=>{ const m=dayModel(k); if(!m.items.length) return "";
-    return `${w} ${lab}\n`+m.items.map(i=>`${hm(i.s)}–${hm(end(i))}  ${i.r||""}  ${i.c?i.c+"  ":""}${i.t}${i.a.pick===false?"  (plano B)":""}${i.a.para==="fred"?"  [pro Fred]":""}${i.a.note?"\n   Nota: "+i.a.note.replace(/\n/g," "):""}`).join("\n"); }).filter(Boolean).join("\n\n") || "Agenda vazia.";
-  const done=()=>toast("Agenda copiada");
-  const fb=()=>{ const ta=document.createElement("textarea"); ta.value=txt; document.body.appendChild(ta); ta.select(); try{ document.execCommand("copy"); done(); }catch(e){ toast("Não consegui copiar"); } ta.remove(); };
+    return `${w} ${lab}\n`+m.items.map(i=>`${hm(i.s)}–${hm(end(i))}  ${i.r||""}  ${i.c?i.c+"  ":""}${i.t}${i.a.pick===false?"  (plan B)":""}${i.a.para==="fred"?"  [pro Fred]":""}${i.a.note?"\n   Note: "+i.a.note.replace(/\n/g," "):""}`).join("\n"); }).filter(Boolean).join("\n\n") || "Empty schedule.";
+  const done=()=>toast("Schedule copied");
+  const fb=()=>{ const ta=document.createElement("textarea"); ta.value=txt; document.body.appendChild(ta); ta.select(); try{ document.execCommand("copy"); done(); }catch(e){ toast("Could not copy"); } ta.remove(); };
   try{ navigator.clipboard.writeText(txt).then(done,fb); }catch(e){ fb(); }
 }
 const order=["N","S","W","E"];

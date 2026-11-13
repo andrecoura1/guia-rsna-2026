@@ -1,31 +1,31 @@
-# Guia RSNA 2026 (não oficial)
+# RSNA 2026 pocket guide (unofficial)
 
-Agenda de bolso para quem vai ao **RSNA 2026** (McCormick Place, Chicago, 29/11 a 03/12/2026), feita para usar no celular durante o congresso.
+A pocket schedule for **RSNA 2026** (McCormick Place, Chicago, Nov 29 – Dec 3, 2026), built to use on your phone during the meeting.
 
-**Abrir:** https://andrecoura1.github.io/guia-rsna-2026/
+**Open:** https://andrecoura1.github.io/guia-rsna-2026/
 
-## O que faz
+## What it does
 
-- **Especialidades:** na primeira abertura você escolhe as suas (IA, MSK, Neuro, Mama, Tórax, Física…), e o Programa mostra só o que interessa.
-- **Meu dia:** monte a agenda. Quando duas sessões batem no mesmo horário, o app deixa as duas e você escolhe na hora ("Vou").
-- **Caminhada entre salas:** calcula o tempo a pé entre North, South, West e Lakeside e avisa quando não dá tempo.
-- **Agora / Próximo:** mostra o que está acontecendo, a próxima sala e a hora de sair.
-- **Captura rápida:** foto (câmera direta), vídeo, marcar momento e anotações com a hora; "Caderno do dia" e "Conheci alguém" (nome, contato, foto do crachá).
-- **Pessoas:** busque qualquer palestrante ou moderador e veja o que ele faz **ao vivo** (aula, moderação, apresentação oral) separado de pôsteres e coautorias.
-- **Estandes:** os ~790 expositores com número de estande e hall; monte sua rota e marque como visitado.
-- **Social:** recepções, música ao vivo, Exhibit Hall Social, After Dark.
-- **Mapa** esquemático do McCormick e tabela de caminhada.
+- **Subspecialties:** pick yours on first launch (AI, MSK, Neuro, Breast, Chest, Physics…) and the Program shows only what matters to you.
+- **My day:** build your schedule. When two sessions overlap, both stay and you decide on the spot ("Going").
+- **Walking time:** estimates the walk between North, South, West and Lakeside and warns you when there is not enough time.
+- **Now / Next:** what is happening now, your next room and when to leave.
+- **Quick capture:** photo (straight to camera), video, time-stamped notes; a day notebook and "I met someone" (name, contact, badge photo).
+- **People:** search any speaker or moderator and see what they do **live** (lectures, moderation, oral talks), separate from posters and co-authorships.
+- **Booths:** ~790 exhibitors with booth numbers and halls; build your route and check off visits.
+- **Social:** receptions, live music, Exhibit Hall Social, After Dark.
+- **Map:** a schematic of McCormick Place and a walking-time table.
 
-## Privacidade
+## Privacy
 
-Tudo o que você marca, anota e fotografa fica **só no seu celular** (armazenamento do navegador). Não há login nem servidor. Use **Compartilhar** para mandar anotações e fotos para o seu e-mail, Notas ou WhatsApp, e **Mais › Seus dados › Baixar backup** de vez em quando. Não limpe os dados do Safari durante o congresso.
+Everything you mark, write or photograph stays **on your own phone** (browser storage). No login, no server. Use **Share** to send notes and photos to your email, Notes or WhatsApp, and **More › Your data › Download backup** from time to time. Do not clear Safari data during the meeting.
 
-## Dica
+## Tip
 
-No iPhone: abra o link no Safari › Compartilhar › **Adicionar à Tela de Início**. Abra uma vez no Wi-Fi do hotel para guardar a página e economizar 4G no centro de convenções.
+On iPhone: open the link in Safari › Share › **Add to Home Screen**. Open it once on hotel Wi-Fi so the page is cached and saves mobile data at the convention center.
 
-## Aviso
+## Disclaimer
 
-Projeto pessoal de colegas radiologistas, **sem vínculo com o RSNA**.
+A personal project by fellow radiologists, **not affiliated with RSNA**. The official RSNA app offers a similar tool; this one was a vibe coding exercise with a few extra features for personal organization.
 
-O guia usa **apenas informações públicas do evento**: o catálogo de sessões, a lista de palestrantes e a lista de expositores divulgados pelo RSNA. **Nenhuma informação interna ou privilegiada foi usada.** O programa foi copiado em 12/11/2026 e pode mudar: confirme salas e horários no app oficial do RSNA. Tempos de caminhada são estimativas.
+The guide uses **only public event information**: the session catalog, speaker list and exhibitor list published by RSNA. **No internal or privileged information was used.** The program was copied on Nov 12, 2026 and may change: confirm rooms and times in the official RSNA app. Walking times are estimates.
