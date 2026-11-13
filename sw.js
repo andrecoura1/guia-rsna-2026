@@ -1,5 +1,5 @@
 // Offline cache for the RSNA 2026 guide. Data you enter lives in the browser, not here.
-const CACHE = "rsna26-v1";
+const CACHE = "rsna26-v2";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-180.png",
   "https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
