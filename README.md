@@ -29,3 +29,5 @@ On iPhone: open the link in Safari › Share › **Add to Home Screen**. Open it
 A personal project by fellow radiologists, **not affiliated with RSNA**. The official RSNA app offers a similar tool; this one was a vibe coding exercise with a few extra features for personal organization.
 
 The guide uses **only public event information**: the session catalog, speaker list and exhibitor list published by RSNA. **No internal or privileged information was used.** The program was copied on Nov 12, 2026 and may change: confirm rooms and times in the official RSNA app. Walking times are estimates.
+
+**Official sources:** [RSNA 2026 website](https://www.rsna.org/annual-meeting) · [Official program (Meeting Central)](https://cattendee.abstractsonline.com/meeting/21552/pages/sessionsview). Always check the official program before you go.
